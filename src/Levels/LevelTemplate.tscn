@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Triggers/HiddenTransition.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Levels/Game.gd" type="Script" id=6]
+[ext_resource path="res://src/Controllers/Game.gd" type="Script" id=6]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
