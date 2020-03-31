@@ -5,12 +5,8 @@ export var stomp_impulse = 1000.0
 var _camera_current_limits: Vector3
 
 
-func _on_EnemyDetector_area_entered(area: Area2D) -> void:
-	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
-
-
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
-	queue_free()
+	print("combat")
 
 
 func _physics_process(delta: float) -> void:
