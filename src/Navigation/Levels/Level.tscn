@@ -62,6 +62,15 @@ collision_mask = 8
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2144, 632 )
 
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 508.454, 992.503 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3487.35, 605.437 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5369.03, 1380.44 )
+
 [node name="HiddenTransition" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3260, 100 )
 scale = Vector2( -2.65388, 2.33398 )

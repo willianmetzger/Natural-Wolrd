@@ -246,10 +246,6 @@ config/name="Natural World"
 run/main_scene="res://src/main/Game.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Game="*res://src/main/Game.tscn"
-
 [display]
 
 window/size/width=1920
