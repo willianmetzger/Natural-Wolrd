@@ -4,10 +4,14 @@ extends Actor
 export var stomp_impulse = 1000.0
 var _camera_current_limits: Vector3
 
+signal enemies_encountered(formation)
+
+func start_encounter(formation) -> void:
+	emit_signal("enemies_encountered", formation.formation.instance())
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
-	print("combat")
-
+	start_encounter(body.get_node("./Formation"))
+	body.get_node(".").queue_free()
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0

@@ -127,7 +127,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Level",
 "language": "GDScript",
-"path": "res://src/map/Level.gd"
+"path": "res://src/Navigation/Levels/Level.gd"
 }, {
 "base": "Control",
 "class": "LifeBar",
@@ -138,11 +138,6 @@ _global_script_classes=[ {
 "class": "ManaBar",
 "language": "GDScript",
 "path": "res://src/combat/interface/bars/manabar/ManaBar.gd"
-}, {
-"base": "Node",
-"class": "MapAction",
-"language": "GDScript",
-"path": "res://src/map/pawns/actions/MapAction.gd"
 }, {
 "base": "Node2D",
 "class": "Party",
@@ -194,11 +189,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/combat/battlers/actions/SkillAction.gd"
 }, {
-"base": "MapAction",
-"class": "StartCombatAction",
-"language": "GDScript",
-"path": "res://src/map/pawns/actions/StartCombatAction.gd"
-}, {
 "base": "Control",
 "class": "StatBar",
 "language": "GDScript",
@@ -236,7 +226,6 @@ _global_script_class_icons={
 "Level": "",
 "LifeBar": "",
 "ManaBar": "",
-"MapAction": "",
 "Party": "",
 "PartyMember": "",
 "PawnAnim": "",
@@ -247,7 +236,6 @@ _global_script_class_icons={
 "SaveGame": "",
 "Skill": "",
 "SkillAction": "",
-"StartCombatAction": "",
 "StatBar": "",
 "TurnQueue": ""
 }
@@ -255,12 +243,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Natural World"
-run/main_scene="res://src/Navigation/Levels/LevelTemplate.tscn"
+run/main_scene="res://src/main/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-LevelTemplate="*res://src/Navigation/Levels/LevelTemplate.tscn"
+Game="*res://src/main/Game.tscn"
 
 [display]
 
