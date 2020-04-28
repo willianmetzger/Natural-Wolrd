@@ -1,23 +1,20 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/party/Party.gd" type="Script" id=1]
 [ext_resource path="res://src/party/PartyMember.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/combat/battlers/jobs/GodetteJob.tres" type="Resource" id=3]
+[ext_resource path="res://src/combat/battlers/skills/Offensive Skills/Shoot.tres" type="Resource" id=3]
 [ext_resource path="res://assets/sprites/battlers/godette_portrait_256.png" type="Texture" id=4]
 [ext_resource path="res://src/combat/animation/GodetteAnim.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/combat/battlers/skills/LearnedSkill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/combat/battlers/skills/Lollislash.tres" type="Resource" id=7]
 [ext_resource path="res://src/combat/battlers/ai/PlayerInput.gd" type="Script" id=8]
-[ext_resource path="res://src/combat/battlers/jobs/RobiJob.tres" type="Resource" id=10]
 [ext_resource path="res://assets/sprites/battlers/robi_portrait_256.png" type="Texture" id=11]
 [ext_resource path="res://src/combat/animation/RobiAnim.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/combat/battlers/skills/Slash.tres" type="Resource" id=13]
 
 [node name="Party" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Godette" parent="." instance=ExtResource( 2 )]
-growth = ExtResource( 3 )
 
 [node name="Battler" parent="Godette" index="0"]
 party_member = true
@@ -28,11 +25,10 @@ turn_order_icon = ExtResource( 4 )
 [node name="LolliSlash" parent="Godette/Battler/Skills" index="0" instance=ExtResource( 6 )]
 skill = ExtResource( 7 )
 
-[node name="AI" parent="Godette/Battler" index="6"]
+[node name="AI" parent="Godette/Battler" index="5"]
 script = ExtResource( 8 )
 
 [node name="Robi" parent="." instance=ExtResource( 2 )]
-growth = ExtResource( 10 )
 
 [node name="Battler" parent="Robi" index="0"]
 party_member = true
@@ -41,10 +37,9 @@ turn_order_icon = ExtResource( 11 )
 [node name="RobiAnim" parent="Robi/Battler/Skin" index="2" instance=ExtResource( 12 )]
 
 [node name="Slash" parent="Robi/Battler/Skills" index="0" instance=ExtResource( 6 )]
-skill = ExtResource( 13 )
-level = 0
+skill = ExtResource( 3 )
 
-[node name="AI" parent="Robi/Battler" index="6"]
+[node name="AI" parent="Robi/Battler" index="5"]
 script = ExtResource( 8 )
 
 [editable path="Godette"]

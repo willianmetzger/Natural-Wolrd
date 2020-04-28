@@ -5,9 +5,10 @@ extends Node
 signal combat_started()
 
 const combat_arena_scene = preload("res://src/combat/CombatArena.tscn")
+onready var possible_levels = null
 onready var transition = $Overlays/TransitionColor
-onready var level = $Level
-onready var player = $Level/Player
+onready var level = null
+onready var player
 onready var party = $Party as Party
 onready var music_player = $MusicPlayer
 onready var game_over_interface : = $GameOverInterface
@@ -16,10 +17,15 @@ onready var game_over_interface : = $GameOverInterface
 var transitioning = false
 var combat_arena : CombatArena
 
-func _ready():
-	#level.spawn_party(party)
-	level.visible = true
-	player.connect("enemies_encountered", self, "enter_battle")
+func prepare_levels(game_stage) -> void:
+	possible_levels = ["res://src/map/Levels/Level.tscn"]
+
+func load_level():
+	var level_chosen = int(rand_range(0, possible_levels.size() - 1))
+	level = load(possible_levels[level_chosen]).instance()
+	add_child(level)
+	player = $Level/Player
+	player.connect("enemies_encountered", self,  "enter_battle")
 
 func enter_battle(formation: Formation):
 	# Plays the combat transition animation and initializes the combat scene

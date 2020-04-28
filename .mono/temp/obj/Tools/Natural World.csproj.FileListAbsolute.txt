@@ -4,3 +4,9 @@ C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-Wolrd\.mono\temp\o
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-Wolrd\.mono\temp\obj\Tools\Natural World.csproj.CoreCompileInputs.cache
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-Wolrd\.mono\temp\obj\Tools\Natural World.dll
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-Wolrd\.mono\temp\obj\Tools\Natural World.pdb
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\bin\Tools\Natural World.dll
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\bin\Tools\Natural World.pdb
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.csprojAssemblyReference.cache
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.csproj.CoreCompileInputs.cache
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.dll
+C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.pdb

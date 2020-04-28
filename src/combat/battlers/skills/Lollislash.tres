@@ -9,5 +9,6 @@ name = "Lolislash"
 description = "A sweet hit"
 icon = ExtResource( 1 )
 mana_cost = 3
-base_damage = 4
+is_offensive = false
+targets = 0
 success_chance = 1.0

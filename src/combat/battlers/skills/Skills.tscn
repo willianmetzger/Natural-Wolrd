@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
-
 script/source = "extends Node
 
 func get_children():
@@ -19,11 +18,9 @@ func get_children():
 	var learned = []
 	for i in range(len(all_skills)):
 		var skill = all_skills[i] as LearnedSkill
-		if skill.level <= stats.level:
-			learned.append(skill.skill)
+		learned.append(skill.skill)
 	return learned
 "
 
 [node name="Skills" type="Node"]
 script = SubResource( 1 )
-

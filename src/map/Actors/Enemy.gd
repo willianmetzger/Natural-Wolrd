@@ -1,4 +1,4 @@
-extends "res://src/Actors/Actor.gd"
+extends "res://src/map/Actors/Actor.gd"
 
 func _ready() -> void:
 	set_physics_process(false)

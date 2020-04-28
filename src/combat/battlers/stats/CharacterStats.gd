@@ -16,11 +16,11 @@ var health : int
 var mana : int setget set_mana
 export var max_health : int = 1 setget set_max_health, _get_max_health
 export var max_mana : int = 0 setget set_max_mana, _get_max_mana
-export var strength : int = 1 setget ,_get_strength
-export var defense : int = 1 setget ,_get_defense
 export var speed : int = 1 setget ,_get_speed
+export(Array, String) var consumables
+export(Array, String) var items
+export(Array, Resource) var Skills
 var is_alive : bool setget ,_is_alive
-var level : int
 	
 func reset():
 	health = self.max_health
@@ -35,9 +35,9 @@ func copy() -> CharacterStats:
 	copy.mana = mana
 	return copy
 
-func take_damage(hit : Hit):
+func take_damage(damage):
 	var old_health = health
-	health -= hit.damage
+	health -= damage
 	health = max(0, health)
 	emit_signal("health_changed", health, old_health)
 	if health == 0:
@@ -79,15 +79,6 @@ func _get_max_health() -> int:
 
 func _get_max_mana() -> int:
 	return max_mana
-
-func _get_strength() -> int:
-	return strength
-	
-func _get_defense() -> int:
-	return defense
 	
 func _get_speed() -> int:
 	return speed
-
-func _get_level() -> int:
-	return level

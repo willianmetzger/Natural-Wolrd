@@ -10,7 +10,6 @@ signal died(battler)
 export var TARGET_OFFSET_DISTANCE : float = 120.0
 
 export var stats : Resource
-onready var drops : = $Drops
 onready var skin = $Skin
 onready var actions = $Actions
 onready var bars = $Bars

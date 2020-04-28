@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://src/Actors/Actor.gd"
+"path": "res://src/map/Actors/Actor.gd"
 }, {
 "base": "Position2D",
 "class": "Battler",
@@ -74,10 +74,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/dialogue/DialoguePlayer.gd"
 }, {
-"base": "Node",
-"class": "Drops",
+"base": "Node2D",
+"class": "EnemySpawner",
 "language": "GDScript",
-"path": "res://src/combat/battlers/Drops.gd"
+"path": "res://src/map/EnemySpawner.gd"
 }, {
 "base": "Item",
 "class": "Equipment",
@@ -99,16 +99,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/interface/game_over/GameOverInterface.gd"
 }, {
-"base": "Resource",
-"class": "GrowthStats",
-"language": "GDScript",
-"path": "res://src/combat/battlers/stats/GrowthStats.gd"
-}, {
-"base": "Reference",
-"class": "Hit",
-"language": "GDScript",
-"path": "res://src/combat/Hit.gd"
-}, {
 "base": "Reference",
 "class": "Inventory",
 "language": "GDScript",
@@ -127,7 +117,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Level",
 "language": "GDScript",
-"path": "res://src/Navigation/Levels/Level.gd"
+"path": "res://src/map/Levels/Level.gd"
 }, {
 "base": "Control",
 "class": "LifeBar",
@@ -164,10 +154,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/map/pawns/PawnInteractive.gd"
 }, {
-"base": "Actor",
+"base": "Reference",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/Actors/Player.gd"
+"path": "res://src/map/Actors/Player.gd"
+}, {
+"base": "Sprite",
+"class": "PlayerBattler",
+"language": "GDScript",
+"path": "res://src/map/Actors/PlayerBattler.gd"
 }, {
 "base": "Node2D",
 "class": "RectExtents",
@@ -213,13 +208,11 @@ _global_script_class_icons={
 "DialogueAction": "",
 "DialogueBox": "",
 "DialoguePlayer": "",
-"Drops": "",
+"EnemySpawner": "",
 "Equipment": "",
 "Formation": "",
 "GUI": "",
 "GameOverInterface": "",
-"GrowthStats": "",
-"Hit": "",
 "Inventory": "",
 "Item": "",
 "LearnedSkill": "",
@@ -232,6 +225,7 @@ _global_script_class_icons={
 "PawnFollower": "",
 "PawnInteractive": "",
 "Player": "",
+"PlayerBattler": "",
 "RectExtents": "",
 "SaveGame": "",
 "Skill": "",
@@ -243,7 +237,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Natural World"
-run/main_scene="res://src/main/Game.tscn"
+run/main_scene="res://src/map/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -254,8 +248,21 @@ window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
 
+[global]
+
+Version=0.2
+
 [input]
 
+ui_accept={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777222,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 ui_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)

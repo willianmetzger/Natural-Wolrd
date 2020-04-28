@@ -12,7 +12,7 @@ func save(id : int):
 	# Passes a SaveGame resource to all nodes to save data from
 	# and writes it to the disk
 	var save_game := SaveGame.new()
-	save_game.game_version = ProjectSettings.get_setting("application/config/version")
+	save_game.game_version = ProjectSettings.get_setting("global/Version")
 	for node in get_tree().get_nodes_in_group('save'):
 		node.save(save_game)
 	

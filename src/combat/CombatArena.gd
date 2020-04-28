@@ -6,7 +6,6 @@ const BattlerNode = preload("res://src/combat/battlers/Battler.tscn")
 
 onready var turn_queue : TurnQueue = $TurnQueue
 onready var interface = $CombatInterface
-onready var rewards = $Rewards
 
 var active : bool = false
 var party : Array = []
@@ -31,7 +30,6 @@ func initialize(formation : Formation, party : Array):
 		battler.initialize()
 		
 	interface.initialize(self, turn_queue, battlers)
-	rewards.initialize(battlers)
 	turn_queue.initialize()
 	
 func battle_start():
@@ -80,7 +78,6 @@ func battle_end():
 	var player_won = active_battler.party_member
 	if player_won:
 		emit_signal("victory")
-		yield(rewards.on_battle_completed(), "completed")
 		emit_signal("battle_completed")
 	else:
 		emit_signal("game_over")

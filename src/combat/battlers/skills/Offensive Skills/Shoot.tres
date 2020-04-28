@@ -1,16 +1,15 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/icons/bilboshot.png" type="Texture" id=1]
-[ext_resource path="res://src/combat/battlers/skills/Skill.gd" type="Script" id=2]
-
+[ext_resource path="res://src/combat/battlers/skills/Offensive Skills/Shoot.gd" type="Script" id=2]
 
 [resource]
-
 script = ExtResource( 2 )
-name = "Bilboshot"
-description = "It does not always hit but when it does, it hits hard!"
+name = "Shoot"
+description = ""
 icon = ExtResource( 1 )
 mana_cost = 4
-base_damage = 8
+is_offensive = true
+targets = 1
 success_chance = 0.75
-
+damage = 25
