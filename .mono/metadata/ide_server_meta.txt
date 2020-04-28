@@ -1,2 +1,2 @@
-﻿58612
-C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Godot_v3.2-stable_mono_win64\Godot_v3.2-stable_mono_win64.exe
+﻿54663
+C:\Users\biaer\Desktop\Unisinos\Godot_v3.2.1-stable_mono_win64\Godot_v3.2.1-stable_mono_win64.exe
