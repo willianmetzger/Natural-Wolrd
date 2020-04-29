@@ -6,7 +6,7 @@ var HookableManaBar = preload("res://src/combat/interface/bars/manabar/HookableM
 func initialize(battlers : Array) -> void:
 	for battler in battlers:
 		create_lifebar(battler)
-		if battler.stats.max_mana > 0:
+		if battler.max_mana > 0:
 			create_manabar(battler)
 
 func create_lifebar(battler : Battler) -> void:

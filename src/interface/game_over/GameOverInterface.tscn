@@ -70,25 +70,14 @@ margin_right = 1870.0
 margin_bottom = 1030.0
 size_flags_vertical = 3
 
-[node name="TryAgain" type="Button" parent="Panel/VBoxContainer/Options"]
+[node name="ReturnToTitle" type="Button" parent="Panel/VBoxContainer/Options"]
 margin_left = 788.0
 margin_right = 1081.0
 margin_bottom = 66.0
 size_flags_horizontal = 6
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 4 )
-text = "TRY AGAIN"
-flat = true
-
-[node name="Load" type="Button" parent="Panel/VBoxContainer/Options"]
-margin_left = 771.0
-margin_top = 70.0
-margin_right = 1098.0
-margin_bottom = 136.0
-size_flags_horizontal = 6
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 4 )
-text = "LOAD GAME"
+text = "RETURN TO TITLE SCREEN"
 flat = true
 
 [node name="Exit" type="Button" parent="Panel/VBoxContainer/Options"]
@@ -99,7 +88,7 @@ margin_bottom = 206.0
 size_flags_horizontal = 6
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 4 )
-text = "EXIT"
+text = "EXIT GAME"
 flat = true
 
 [node name="SelectionArrow" type="Control" parent="Panel"]
@@ -116,6 +105,5 @@ autoplay = "wiggle"
 anims/wiggle = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
-[connection signal="pressed" from="Panel/VBoxContainer/Options/TryAgain" to="." method="_on_TryAgain_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Options/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Options/ReturnToTitle" to="." method="_on_ReturnToTitle_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Options/Exit" to="." method="_on_Exit_pressed"]

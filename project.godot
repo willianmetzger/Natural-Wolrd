@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/map/Actors/Actor.gd"
 }, {
-"base": "Position2D",
+"base": "CharacterStats",
 "class": "Battler",
 "language": "GDScript",
 "path": "res://src/combat/battlers/Battler.gd"
@@ -34,10 +34,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/combat/battlers/BattlerTemplate.gd"
 }, {
-"base": "Resource",
+"base": "Position2D",
 "class": "CharacterStats",
 "language": "GDScript",
-"path": "res://src/combat/battlers/stats/CharacterStats.gd"
+"path": "res://src/combat/battlers/CharacterStats.gd"
 }, {
 "base": "Node",
 "class": "CombatAction",
@@ -237,7 +237,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Natural World"
-run/main_scene="res://src/map/TitleScreen.tscn"
+run/main_scene="res://src/interface/menus/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]

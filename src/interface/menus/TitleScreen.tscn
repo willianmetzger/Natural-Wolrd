@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_128.tres" type="DynamicFont" id=2]
-[ext_resource path="res://src/interface/menus/Quit.gd" type="Script" id=3]
-[ext_resource path="res://src/interface/menus/NewGame.gd" type="Script" id=4]
+[ext_resource path="res://src/interface/menus/Quit.gd" type="Script" id=1]
+[ext_resource path="res://src/interface/menus/NewGame.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_128.tres" type="DynamicFont" id=4]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -36,7 +36,7 @@ rect_min_size = Vector2( 290, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 flat = true
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,7 +51,7 @@ margin_top = -30.0
 margin_right = 139.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -80,7 +80,7 @@ margin_top = -30.0
 margin_right = 84.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Profile"
 align = 1
 __meta__ = {
@@ -110,7 +110,7 @@ margin_top = -30.0
 margin_right = 100.5
 margin_bottom = 30.0
 size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Options"
 align = 1
 __meta__ = {
@@ -126,7 +126,7 @@ rect_min_size = Vector2( 290, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 flat = true
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -141,7 +141,7 @@ margin_top = -30.0
 margin_right = 55.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 align = 1
 __meta__ = {
@@ -155,7 +155,7 @@ margin_left = -500.0
 margin_top = 138.007
 margin_right = 500.0
 margin_bottom = 318.007
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.380392, 0.815686, 0.698039, 1 )
 custom_colors/font_color_shadow = Color( 0.00784314, 0.462745, 0.0745098, 1 )
 custom_constants/shadow_offset_x = 8

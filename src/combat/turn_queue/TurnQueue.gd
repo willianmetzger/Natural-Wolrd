@@ -35,7 +35,7 @@ func _next_battler():
 	emit_signal('queue_changed', get_battlers(), active_battler)
 
 static func sort_battlers(a : Battler, b : Battler) -> bool:
-	return a.stats.speed > b.stats.speed
+	return a.speed > b.speed
 
 func get_party():
 	return _get_targets(true)
@@ -46,7 +46,7 @@ func get_monsters():
 func _get_targets(in_party : bool = false) -> Array:
 	var targets : Array = []
 	for child in get_children():
-		if child.party_member == in_party && child.stats.health > 0:
+		if child.party_member == in_party && child.health > 0:
 			targets.append(child)
 	return targets
 
@@ -57,5 +57,5 @@ func print_queue():
 	# Prints the Battlers' and their speed in the turn order
 	var string : String
 	for battler in get_children():
-		string += battler.name + "(%s)" % battler.stats.speed + " "
+		string += battler.name + "(%s)" % battler.speed + " "
 	print(string)

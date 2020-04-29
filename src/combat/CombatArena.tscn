@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/combat/CombatArena.gd" type="Script" id=1]
 [ext_resource path="res://src/combat/turn_queue/TurnQueue.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://src/combat/interface/SelectArrow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/combat/interface/bars/BattlersBarsBuilder.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/combat/interface/turn_order/TurnOrder.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/theme/default.theme" type="Theme" id=9]
 [ext_resource path="res://src/combat/background/Grasslands.tscn" type="PackedScene" id=10]
 
 [node name="CombatArena" type="Node2D"]
@@ -41,20 +40,5 @@ MOVE_DURATION = 0.1
 [node name="BattlersBarsBuilder" parent="CombatInterface" instance=ExtResource( 6 )]
 
 [node name="TurnOrder" parent="CombatInterface" instance=ExtResource( 7 )]
-
-[node name="Rewards" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="Rewards"]
-anchor_right = 1.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 0, 160 )
-theme = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="Rewards/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "EXP Earned"
-align = 1
-valign = 1
 
 [node name="Grasslands" parent="." instance=ExtResource( 10 )]

@@ -8,7 +8,7 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var icon : TextureRect = $Background/Icon
 
 func initialize(battler : Battler, play_animation : bool = true) -> void:
-	battler.stats.connect('health_depleted', self, '_on_health_depleted')
+	battler.connect('health_depleted', self, '_on_health_depleted')
 
 	self.battler = battler
 	icon.texture = battler.turn_order_icon

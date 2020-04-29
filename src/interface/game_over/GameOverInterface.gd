@@ -1,13 +1,13 @@
 extends CanvasLayer
 class_name GameOverInterface
 
-signal restart_requested()
+signal return_to_title()
 
 onready var panel : = $Panel as Panel
 onready var tween : = $Tween as Tween
 onready var selection_arrow : = $Panel/SelectionArrow as Control
 onready var message_label : = $Panel/VBoxContainer/Message as Label
-onready var try_again_button : = $Panel/VBoxContainer/Options/TryAgain as Button
+onready var try_again_button : = $Panel/VBoxContainer/Options/ReturnToTitle as Button
 onready var options : = $Panel/VBoxContainer/Options
 
 enum Reason { PARTY_DEFEATED }
@@ -59,12 +59,8 @@ func hide() -> void:
 func _on_Exit_pressed() -> void:
 	get_tree().quit()
 
-func _on_TryAgain_pressed():
-	emit_signal("restart_requested")
-
-func _on_Load_pressed():
-	print("IMPLEMENT LOAD GAME FUNCTIONALITY")
+func _on_ReturnToTitle_pressed():
+	emit_signal("return_to_title")
 
 func _get_arrow_position(button_index : int = 0) -> Vector2:
 	return buttons[button_index].get_global_rect().position
-	

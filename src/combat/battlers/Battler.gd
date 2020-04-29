@@ -1,7 +1,7 @@
 # Base entity that represents a character or a monster in combat
 # Every battler has an AI node so all characters can work as a monster
 # or as a computer-controlled player ally
-extends Position2D
+extends CharacterStats
 
 class_name Battler
 
@@ -9,7 +9,6 @@ signal died(battler)
 
 export var TARGET_OFFSET_DISTANCE : float = 120.0
 
-export var stats : Resource
 onready var skin = $Skin
 onready var actions = $Actions
 onready var bars = $Bars
@@ -33,12 +32,11 @@ func _ready() -> void:
 func initialize():
 	skin.initialize()
 	actions.initialize(skills.get_children())
-	stats = stats.copy()
-	stats.connect("health_depleted", self, "_on_health_depleted")
+	connect("health_depleted", self, "_on_health_depleted")
 
 func is_able_to_play() -> bool:
 	# Returns true if the battler can perform an action
-	return stats.health > 0
+	return health > 0
 
 func set_selected(value):
 	selected = value
@@ -50,9 +48,8 @@ func set_selectable(value):
 		set_selected(false)
 
 func take_damage(hit):
-	stats.take_damage(hit)
 	# prevent playing both stagger and death animation if health <= 0
-	if stats.health > 0:
+	if health > 0:
 		skin.play_stagger()
 
 func _on_health_depleted():

@@ -76,8 +76,6 @@ func _on_CombatArena_game_over() -> void:
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
 
-func _on_GameOverInterface_restart_requested():
+func _on_GameOverInterface_return_to_title():
 	game_over_interface.hide()
-	var formation = combat_arena.initial_formation
-	combat_arena.queue_free()
-	enter_battle(formation)
+	get_tree().change_scene("res://src/map/TitleScreen.tscn")

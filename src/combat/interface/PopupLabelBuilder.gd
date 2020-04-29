@@ -4,8 +4,8 @@ const PopupLabel : = preload("PopupLabel.tscn")
 
 func initialize(battlers : Array) -> void:
 	for battler in battlers:
-		battler.stats.connect("health_changed", self, "spawn_label_number", [battler, "health"])
-		battler.stats.connect("mana_changed", self, "spawn_label_number", [battler, "mana"])
+		battler.connect("health_changed", self, "spawn_label_number", [battler, "health"])
+		battler.connect("mana_changed", self, "spawn_label_number", [battler, "mana"])
 		for skill in battler.skills.get_children():
 			skill.connect("missed", self, "spawn_label", [battler, "missed"])
 

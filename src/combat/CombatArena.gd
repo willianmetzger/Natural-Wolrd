@@ -52,7 +52,7 @@ func ready_field(formation : Formation, party_members : Array):
 	for enemy_template in formation.get_children():
 		var enemy : Battler = enemy_template.duplicate()
 		turn_queue.add_child(enemy)
-		enemy.stats.reset() # ensure the enemy starts with full health and mana
+		enemy.reset() # ensure the enemy starts with full health and mana
 	
 	var party_spawn_positions = $SpawnPositions/Party
 	for i in len(party_members):

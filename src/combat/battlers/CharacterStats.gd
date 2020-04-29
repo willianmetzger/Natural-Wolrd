@@ -1,7 +1,7 @@
 # Represents a Battler's actual stats: health, strength, etc.
 # See the child class GrowthStats.gd for stats growth curves
 # and lookup tables
-extends Resource
+extends Position2D
 
 class_name CharacterStats
 
