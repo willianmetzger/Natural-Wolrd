@@ -10,3 +10,7 @@ C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\o
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.csproj.CoreCompileInputs.cache
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.dll
 C:\Users\Willian\Desktop\Serious Shit\Faculdade\Godot\Natural-World\.mono\temp\obj\Tools\Natural World.pdb
+C:\Users\biaer\Documents\GitHub\Natural-World\.mono\temp\obj\Tools\Natural World.dll
+C:\Users\biaer\Documents\GitHub\Natural-World\.mono\temp\obj\Tools\Natural World.pdb
+C:\Users\biaer\Desktop\Unisinos\Godot_v3.2.1-stable_mono_win64\GitHub\Natural-World\.mono\temp\obj\Tools\Natural World.dll
+C:\Users\biaer\Desktop\Unisinos\Godot_v3.2.1-stable_mono_win64\GitHub\Natural-World\.mono\temp\obj\Tools\Natural World.pdb
