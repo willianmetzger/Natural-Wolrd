@@ -25,14 +25,14 @@ export var party_member = false
 export var turn_order_icon : Texture
 
 func _ready() -> void:
-	var direction : Vector2 = Vector2(-1.0, 0.0) if party_member else Vector2(1.0, 0.0)
-	target_global_position = $TargetAnchor.global_position + direction * TARGET_OFFSET_DISTANCE
 	selectable = true
 	
 func initialize():
+	var direction : Vector2 = Vector2(-1.0, 0.0) if party_member else Vector2(1.0, 0.0)
+	target_global_position = $TargetAnchor.global_position + direction * TARGET_OFFSET_DISTANCE
 	skin.initialize()
 	actions.initialize(skills.get_children())
-	connect("health_depleted", self, "_on_health_depleted")
+	.connect("health_depleted", self, "_on_health_depleted")
 
 func is_able_to_play() -> bool:
 	# Returns true if the battler can perform an action
@@ -47,7 +47,8 @@ func set_selectable(value):
 	if not selectable:
 		set_selected(false)
 
-func take_damage(hit):
+func take_damage(damage):
+	.take_damage(damage)
 	# prevent playing both stagger and death animation if health <= 0
 	if health > 0:
 		skin.play_stagger()
@@ -64,3 +65,11 @@ func appear():
 
 func has_point(point : Vector2):
 	return skin.battler_anim.extents.has_point(point)
+
+func end_battle():
+	skin.hide()
+	for bar in bars.get_children():
+		bar.queue_free()
+	for action in actions.get_children():
+		if action.name != "Attack":
+			action.queue_free()

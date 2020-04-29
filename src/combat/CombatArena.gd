@@ -50,22 +50,22 @@ func ready_field(formation : Formation, party_members : Array):
 	# @param formation - the combat template of what the player will be fighting
 	# @param party_members - list of active party battlers that will go to combat
 	for enemy_template in formation.get_children():
-		var enemy : Battler = enemy_template.duplicate()
-		turn_queue.add_child(enemy)
-		enemy.reset() # ensure the enemy starts with full health and mana
+		#var enemy : Battler = enemy_template.duplicate()
+		formation.remove_child(enemy_template)
+		turn_queue.add_child(enemy_template)
+		enemy_template.reset() # ensure the enemy starts with full health and mana
 	
 	var party_spawn_positions = $SpawnPositions/Party
 	for i in len(party_members):
 		# TODO move this into a battler factory and pass already copied info into the scene
 		var party_member = party_members[i]
 		var spawn_point = party_spawn_positions.get_child(i)
-		var battler : Battler = party_member.get_battler_copy()
+		var battler : Battler = party_member.get_battler()
+		party_member.remove_child(battler)
+		turn_queue.add_child(battler)
 		battler.position = spawn_point.position
 		battler.name = party_member.name
 		battler.set_meta("party_member", party_member)
-		# stats are copied from the external party member so we may restart combat cleanly,
-		# such as allowing players to retry a fight if they get game over
-		turn_queue.add_child(battler)
 		self.party.append(battler)
 		# safely attach the interface to the AI in case player input is needed
 		battler.ai.set("interface", interface)
@@ -77,8 +77,10 @@ func battle_end():
 	active_battler.selected = false
 	var player_won = active_battler.party_member
 	if player_won:
+		return_battlers()
 		emit_signal("victory")
 		emit_signal("battle_completed")
+		
 	else:
 		emit_signal("game_over")
 
@@ -114,3 +116,13 @@ func get_targets() -> Array:
 		return turn_queue.get_monsters()
 	else:
 		return turn_queue.get_party()
+
+func return_battlers():
+	for child in turn_queue.get_children():
+		var party = get_node("../Party")
+		for member in party.get_children():
+			if child.name == member.name:
+				child.end_battle()
+				turn_queue.remove_child(child)
+				member.add_child(child)
+				break

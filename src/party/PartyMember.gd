@@ -11,10 +11,9 @@ onready var SAVE_KEY : String = "party_member_" + name
 func _ready():
 	battler.reset()
 
-func get_battler_copy():
-	# Returns a copy of the battler to add to the CombatArena
-	# at the start of a battle
-	return battler.duplicate()
+func get_battler():
+	return battler
+
 
 
 func save(save_game : Resource):

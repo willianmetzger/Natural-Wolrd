@@ -71,8 +71,8 @@ margin_bottom = 1030.0
 size_flags_vertical = 3
 
 [node name="ReturnToTitle" type="Button" parent="Panel/VBoxContainer/Options"]
-margin_left = 788.0
-margin_right = 1081.0
+margin_left = 596.0
+margin_right = 1274.0
 margin_bottom = 66.0
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -81,10 +81,10 @@ text = "RETURN TO TITLE SCREEN"
 flat = true
 
 [node name="Exit" type="Button" parent="Panel/VBoxContainer/Options"]
-margin_left = 872.0
-margin_top = 140.0
-margin_right = 997.0
-margin_bottom = 206.0
+margin_left = 789.0
+margin_top = 70.0
+margin_right = 1081.0
+margin_bottom = 136.0
 size_flags_horizontal = 6
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 4 )
@@ -92,6 +92,9 @@ text = "EXIT GAME"
 flat = true
 
 [node name="SelectionArrow" type="Control" parent="Panel"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="Panel/SelectionArrow"]
 margin_left = -90.4984

@@ -18,7 +18,7 @@ var transitioning = false
 var combat_arena : CombatArena
 
 func prepare_levels(game_stage) -> void:
-	possible_levels = ["res://src/map/Levels/Level.tscn"]
+	possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"]
 
 func load_level():
 	var level_chosen = int(rand_range(0, possible_levels.size() - 1))

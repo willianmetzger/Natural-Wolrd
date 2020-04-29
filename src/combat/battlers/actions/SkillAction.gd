@@ -15,7 +15,7 @@ func execute(targets):
 		return false
 	
 	# Use skill on all targets
-	actor.stats.mana -= skill.mana_cost
+	actor.mana -= skill.mana_cost
 	for target in targets:
 		randomize()
 		if randf() < skill.success_chance:
@@ -30,4 +30,4 @@ func execute(targets):
 	return true
 
 func can_use() -> bool:
-	return actor.stats.mana >= skill.mana_cost
+	return actor.mana >= skill.mana_cost

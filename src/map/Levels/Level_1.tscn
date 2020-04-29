@@ -7,7 +7,7 @@
 [ext_resource path="res://src/map/Actors/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/map/Actors/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/map/EnemySpawner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/door.png" type="Texture" id=8]
+[ext_resource path="res://src/map/Triggers/door.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -21,11 +21,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -66,11 +61,8 @@ tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0
 position = Vector2( 272, 952 )
 scale = Vector2( 0.65748, 0.65748 )
 
-[node name="door" type="Sprite" parent="."]
-position = Vector2( 3149.81, 255.746 )
-scale = Vector2( 1.37697, 1.37697 )
-z_index = -1
-texture = ExtResource( 8 )
+[node name="door" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3145.91, 281.07 )
 
 [node name="Chest" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3048, 936 )

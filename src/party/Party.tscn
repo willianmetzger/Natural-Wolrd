@@ -20,7 +20,7 @@ script = ExtResource( 1 )
 max_health = 35
 max_mana = 12
 speed = 7
-Skills = [ null ]
+Skills = [ ExtResource( 7 ) ]
 party_member = true
 turn_order_icon = ExtResource( 4 )
 
@@ -38,6 +38,10 @@ script = ExtResource( 8 )
 [node name="Robi" parent="." instance=ExtResource( 2 )]
 
 [node name="Battler" parent="Robi" index="0"]
+max_health = 50
+max_mana = 15
+speed = 5
+Skills = [ ExtResource( 3 ) ]
 party_member = true
 turn_order_icon = ExtResource( 11 )
 
