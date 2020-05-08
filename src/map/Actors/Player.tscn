@@ -14,6 +14,13 @@ collision_mask = 12
 script = ExtResource( 2 )
 speed = Vector2( 600, 1400 )
 
+[node name="GUI" type="Control" parent="."]
+margin_top = -442.105
+margin_bottom = -442.105
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="player" type="Sprite" parent="."]
 position = Vector2( 0, -59 )
 scale = Vector2( 0.35, 0.35 )
