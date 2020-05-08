@@ -21,9 +21,18 @@ func prepare_levels(game_stage) -> void:
 	possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"]
 
 func load_level():
-	var level_chosen = int(rand_range(0, possible_levels.size() - 1))
+	remove_child(level)
+	var level_chosen = rand_range(0, possible_levels.size() - 1) as int
 	level = load(possible_levels[level_chosen]).instance()
 	add_child(level)
+	possible_levels.erase(possible_levels[level_chosen])
+	player = $Level/Player
+	player.connect("enemies_encountered", self,  "enter_battle")
+	
+func load_level_byId(id):
+	level = load(possible_levels[id]).instance()
+	add_child(level)
+	possible_levels.erase(possible_levels[id])
 	player = $Level/Player
 	player.connect("enemies_encountered", self,  "enter_battle")
 
