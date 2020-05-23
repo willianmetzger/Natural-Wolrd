@@ -38,8 +38,8 @@ func copy() -> CharacterStats:
 func take_damage(damage):
 	var old_health = health
 	health -= damage
-	health = max(0, health)
 	emit_signal("health_changed", health, old_health)
+	health = max(0, health)
 	if health == 0:
 		emit_signal("health_depleted")
 

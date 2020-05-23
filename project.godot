@@ -90,11 +90,6 @@ _global_script_classes=[ {
 "path": "res://src/combat/battlers/Formation.gd"
 }, {
 "base": "CanvasLayer",
-"class": "GUI",
-"language": "GDScript",
-"path": "res://src/interface/gui/GUI.gd"
-}, {
-"base": "CanvasLayer",
 "class": "GameOverInterface",
 "language": "GDScript",
 "path": "res://src/interface/game_over/GameOverInterface.gd"
@@ -154,7 +149,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/map/pawns/PawnInteractive.gd"
 }, {
-"base": "Reference",
+"base": "Actor",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/map/Actors/Player.gd"
@@ -211,7 +206,6 @@ _global_script_class_icons={
 "EnemySpawner": "",
 "Equipment": "",
 "Formation": "",
-"GUI": "",
 "GameOverInterface": "",
 "Inventory": "",
 "Item": "",
