@@ -10,12 +10,12 @@ onready var menuId = 0
 onready var ArrowPosition = 0
 onready var Arrow = $Arrow
 
-func _process(delta: float) -> void:
-	match menuId:
-		0:
-			Arrow.position = TitleArrowPos[ArrowPosition]
-		1:
-			Arrow.position = OptionsArrowPos[ArrowPosition]
+#func _process(delta: float) -> void:
+#	match menuId:
+#		0:
+#			Arrow.position = TitleArrowPos[ArrowPosition]
+#		1:
+#			Arrow.position = OptionsArrowPos[ArrowPosition]
 
 func _on_NewGame_mouse_entered() -> void:
 	ArrowPosition = 0
