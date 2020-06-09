@@ -80,3 +80,5 @@ enemy_list = [ ExtResource( 6 ) ]
 [node name="EnemySpawner3" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2000, 952 )
 enemy_list = [ ExtResource( 6 ) ]
+
+[editable path="Player"]

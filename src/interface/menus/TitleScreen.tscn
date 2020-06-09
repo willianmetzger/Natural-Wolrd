@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/interface/menus/Quit.gd" type="Script" id=1]
 [ext_resource path="res://src/interface/menus/NewGame.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/fonts/default_theme/montserrat_eb_128.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/interface/menus/TitleScreen.gd" type="Script" id=5]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,46 +54,16 @@ margin_right = 139.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 3 )
-text = "New Game"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Profile" type="Button" parent="VBoxContainer"]
-margin_left = 125.0
-margin_top = 84.0
-margin_right = 415.0
-margin_bottom = 164.0
-rect_min_size = Vector2( 290, 80 )
-size_flags_horizontal = 4
-size_flags_vertical = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBoxContainer/Profile"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -84.0
-margin_top = -30.0
-margin_right = 84.0
-margin_bottom = 30.0
-size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Profile"
-align = 1
+text = "Novo Jogo"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 margin_left = 125.0
-margin_top = 168.0
+margin_top = 84.0
 margin_right = 415.0
-margin_bottom = 248.0
+margin_bottom = 164.0
 rect_min_size = Vector2( 290, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -111,7 +83,7 @@ margin_right = 100.5
 margin_bottom = 30.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 3 )
-text = "Options"
+text = "Opções"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -119,9 +91,9 @@ __meta__ = {
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 margin_left = 125.0
-margin_top = 252.0
+margin_top = 168.0
 margin_right = 415.0
-margin_bottom = 332.0
+margin_bottom = 248.0
 rect_min_size = Vector2( 290, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -142,7 +114,7 @@ margin_right = 55.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 3 )
-text = "Quit"
+text = "Sair"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,5 +133,8 @@ custom_colors/font_color_shadow = Color( 0.00784314, 0.462745, 0.0745098, 1 )
 custom_constants/shadow_offset_x = 8
 text = "Natural World"
 align = 1
+[connection signal="mouse_entered" from="VBoxContainer/NewGame" to="." method="_on_NewGame_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/NewGame" to="VBoxContainer/NewGame" method="_on_NewGame_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]

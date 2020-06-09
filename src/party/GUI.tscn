@@ -1,0 +1,368 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/font_default.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/sprites/battlers/godette_portrait_256.png" type="Texture" id=2]
+[ext_resource path="res://assets/theme/icons/potion_mana.png" type="Texture" id=3]
+[ext_resource path="res://assets/theme/icons/potion_health.png" type="Texture" id=4]
+[ext_resource path="res://src/combat/interface/bars/lifebar/fill.png" type="Texture" id=5]
+[ext_resource path="res://src/combat/interface/bars/background.png" type="Texture" id=6]
+[ext_resource path="res://src/combat/interface/bars/manabar/fill.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[node name="GUI" type="CanvasLayer"]
+layer = 50
+
+[node name="ItemBar" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ItemBar"]
+anchor_right = 1.0
+anchor_bottom = 0.05
+custom_styles/normal = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chloe" type="TextureRect" parent="ItemBar/Label"]
+anchor_left = 0.1
+anchor_right = 0.1
+margin_left = -75.1583
+margin_top = -0.113198
+margin_right = 182.842
+margin_bottom = 257.887
+rect_scale = Vector2( -0.2, 0.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Chloe"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Chloe"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chloe2" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.1
+anchor_right = 0.1
+margin_left = 145.389
+margin_top = 1.47347
+margin_right = 403.389
+margin_bottom = 259.473
+rect_scale = Vector2( -0.2, 0.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chloe3" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.1
+anchor_right = 0.1
+margin_left = 384.978
+margin_top = -0.113198
+margin_right = 642.978
+margin_bottom = 257.887
+rect_scale = Vector2( -0.2, 0.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+anchor_left = -2.4
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_right = 396.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+anchor_left = -2.4
+anchor_top = 0.65
+anchor_right = -2.4
+anchor_bottom = 0.7
+margin_top = 17.9243
+margin_right = 396.0
+margin_bottom = 70.9243
+rect_scale = Vector2( 3, 2.8 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartSeed" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -677.911
+margin_top = 4.76837e-07
+margin_right = -677.911
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThornSword" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -576.614
+margin_top = 4.76837e-07
+margin_right = -576.614
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FloralShield" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -484.54
+margin_top = 4.76837e-07
+margin_right = -484.54
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crown" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -395.448
+margin_top = 4.76837e-07
+margin_right = -395.448
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeafShoes" type="TextureRect" parent="ItemBar/Label"]
+visible = false
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -297.057
+margin_top = -1.0
+margin_right = -297.057
+margin_bottom = -1.0
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthPotion" type="TextureRect" parent="ItemBar/Label"]
+anchor_left = 0.8
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.84363
+margin_top = -1.94806
+margin_right = 1.84363
+margin_bottom = -1.94806
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ItemBar/Label/HealthPotion"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -6.0
+margin_right = 41.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "x0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManaPotion" type="TextureRect" parent="ItemBar/Label"]
+anchor_left = 0.86
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1.5412, 1.33509 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ItemBar/Label/ManaPotion"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -6.0
+margin_right = 41.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "x0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

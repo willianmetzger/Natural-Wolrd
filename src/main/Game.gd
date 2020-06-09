@@ -10,23 +10,48 @@ onready var transition = $Overlays/TransitionColor
 onready var level = null
 onready var player
 onready var party = $Party as Party
+onready var GUI = $GUI
 onready var music_player = $MusicPlayer
 onready var game_over_interface : = $GameOverInterface
+onready var game_stage = 1
+onready var current_level = 0
 
 var transitioning = false
 var combat_arena : CombatArena
 
-func prepare_levels(game_stage) -> void:
-	possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"]
+func prepare_levels() -> void:
+	if game_stage == 1:
+		possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"]
+	elif game_stage == 2:
+		possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"]
+	else :
+		possible_levels = ["res://src/map/Levels/Level_1.tscn", "res://src/map/Levels/Level_2.tscn", "res://src/map/Levels/Level_3.tscn", "res://src/map/Levels/Level_4.tscn", "res://src/map/Levels/Level_5.tscn"] 
 
 func load_level():
-	remove_child(level)
-	var level_chosen = rand_range(0, possible_levels.size() - 1) as int
-	level = load(possible_levels[level_chosen]).instance()
-	add_child(level)
-	possible_levels.erase(possible_levels[level_chosen])
-	player = $Level/Player
-	player.connect("enemies_encountered", self,  "enter_battle")
+	if	current_level == 3:
+		remove_child(level)
+		level = load("res://src/map/Levels/Rest_Level.tscn").instance()
+		add_child(level)
+		player = $Level/Player
+		player.connect("enemies_encountered", self,  "enter_battle")	
+		
+	elif current_level == 5:
+		remove_child(level)
+		level = load("res://src/map/Levels/Boss_Level" + game_stage + ".tscn").instance()
+		add_child(level)
+		player = $Level/Player
+		player.connect("enemies_encountered", self,  "enter_battle")
+		
+	else :
+		remove_child(level)
+		var level_chosen = rand_range(0, possible_levels.size() - 1) as int
+		level = load(possible_levels[level_chosen]).instance()
+		add_child(level)
+		possible_levels.erase(possible_levels[level_chosen])
+		player = $Level/Player
+		player.connect("enemies_encountered", self,  "enter_battle")
+		
+	current_level += 1
 	
 func load_level_byId(id):
 	level = load(possible_levels[id]).instance()
@@ -34,6 +59,7 @@ func load_level_byId(id):
 	possible_levels.erase(possible_levels[id])
 	player = $Level/Player
 	player.connect("enemies_encountered", self,  "enter_battle")
+	current_level += 1
 
 func enter_battle(formation: Formation):
 	# Plays the combat transition animation and initializes the combat scene
@@ -45,6 +71,7 @@ func enter_battle(formation: Formation):
 	transitioning = true
 	yield(transition.fade_to_color(), "completed")
 
+	remove_child(GUI)
 	remove_child(level)
 	combat_arena = combat_arena_scene.instance()
 	add_child(combat_arena)
@@ -68,6 +95,7 @@ func _on_CombatArena_battle_completed(arena):
 	combat_arena.queue_free()
 	
 	add_child(level)
+	add_child(GUI)
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
 	music_player.stop()
