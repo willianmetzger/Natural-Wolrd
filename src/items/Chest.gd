@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			is_open = true
 			can_open = false
-			texture = load("res://assets/sprites/local_map/Treasure Chest open 254x254.png")
 			roll_drop()
 
 func _on_area_entered(area: Area2D) -> void:

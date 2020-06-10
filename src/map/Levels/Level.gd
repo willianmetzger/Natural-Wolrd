@@ -4,10 +4,14 @@
 extends Node
 class_name Level
 
+export(float) var cameraRightLimit = 10000000
+
 var enemy_spawners
 var enemy_list = []
 
 func _ready() -> void:
+	var playerCamera  = $Player/Camera2D
+	playerCamera.limit_right = cameraRightLimit
 	enemy_spawners = $EnemySpawners
 	if enemy_spawners.get_child_count() > 0:
 		for spawner in enemy_spawners.get_children():

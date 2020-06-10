@@ -1,8 +1,14 @@
 class_name Player
 extends Actor
 
+enum facing{
+	Left,
+	Right
+}
+
 export var stomp_impulse = 1000.0
 var _camera_current_limits: Vector3
+var sprDir = facing.Left
 
 signal enemies_encountered(formation)
 
@@ -18,7 +24,14 @@ func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-
+	if Input.is_action_just_pressed("move_left"):
+		if sprDir == facing.Right:
+			scale.x *= -1
+		sprDir = facing.Left
+	elif Input.is_action_just_pressed("move_right"):
+		if sprDir == facing.Left:
+			scale.x *= -1
+		sprDir = facing.Right
 
 	""" Return a direction based on player's inputs """
 func get_direction() -> Vector2:	# Right = 1.0 Left = -1.0 #
@@ -68,5 +81,3 @@ func set_camera_limits(left: float, right: float, top: float) -> void:
 		player_camera.limit_left = left
 	if right != -1:
 		player_camera.limit_right = right
-	if top != -1:
-		player_camera.limit_top = top

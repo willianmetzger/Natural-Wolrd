@@ -4,11 +4,10 @@
 [ext_resource path="res://assets/sprites/local_map/Treasure Chest closed 254x254.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 127, 128.521 )
+extents = Vector2( 67.5, 68.5 )
 
 [node name="Chest" type="Sprite"]
 position = Vector2( 84.5, 84.5 )
-scale = Vector2( 0.65748, 0.65748 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

@@ -1,12 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/font_default.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/font_GUI_20.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/sprites/battlers/godette_portrait_256.png" type="Texture" id=2]
 [ext_resource path="res://assets/theme/icons/potion_mana.png" type="Texture" id=3]
 [ext_resource path="res://assets/theme/icons/potion_health.png" type="Texture" id=4]
 [ext_resource path="res://src/combat/interface/bars/lifebar/fill.png" type="Texture" id=5]
 [ext_resource path="res://src/combat/interface/bars/background.png" type="Texture" id=6]
 [ext_resource path="res://src/combat/interface/bars/manabar/fill.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/icons/coroa_de_glicinias.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/icons/sapato_de_folhas.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/icons/escudo_floral.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/icons/espada_de_espinhos.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/icons/semente_do_coracao.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/battlers/ChloePortrait.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
@@ -42,7 +48,7 @@ margin_top = -0.113198
 margin_right = 182.842
 margin_bottom = 257.887
 rect_scale = Vector2( -0.2, 0.2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -238,7 +244,6 @@ __meta__ = {
 }
 
 [node name="HeartSeed" type="TextureRect" parent="ItemBar/Label"]
-visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
@@ -247,13 +252,12 @@ margin_left = -677.911
 margin_top = 4.76837e-07
 margin_right = -677.911
 rect_scale = Vector2( 1.5412, 1.33509 )
-texture = ExtResource( 4 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ThornSword" type="TextureRect" parent="ItemBar/Label"]
-visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
@@ -262,13 +266,12 @@ margin_left = -576.614
 margin_top = 4.76837e-07
 margin_right = -576.614
 rect_scale = Vector2( 1.5412, 1.33509 )
-texture = ExtResource( 4 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FloralShield" type="TextureRect" parent="ItemBar/Label"]
-visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
@@ -277,13 +280,12 @@ margin_left = -484.54
 margin_top = 4.76837e-07
 margin_right = -484.54
 rect_scale = Vector2( 1.5412, 1.33509 )
-texture = ExtResource( 4 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Crown" type="TextureRect" parent="ItemBar/Label"]
-visible = false
+[node name="GliciniaCrown" type="TextureRect" parent="ItemBar/Label"]
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
@@ -292,13 +294,12 @@ margin_left = -395.448
 margin_top = 4.76837e-07
 margin_right = -395.448
 rect_scale = Vector2( 1.5412, 1.33509 )
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeafShoes" type="TextureRect" parent="ItemBar/Label"]
-visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
@@ -308,7 +309,7 @@ margin_top = -1.0
 margin_right = -297.057
 margin_bottom = -1.0
 rect_scale = Vector2( 1.5412, 1.33509 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -347,6 +348,10 @@ anchor_left = 0.86
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.49646
+margin_top = -1.94806
+margin_right = -2.49646
+margin_bottom = -1.94806
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 3 )
 __meta__ = {
