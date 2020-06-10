@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/Skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Skill"
+description = ""
+mana_cost = 10
+is_offensive = true
+targets = 0
+num_targets = 1
+damage = 12
+min_damage_reduction = 0.0
+max_damage_reduction = 0.0
+success_chance = 1.0

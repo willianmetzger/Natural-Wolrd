@@ -5,10 +5,14 @@
 
 [resource]
 script = ExtResource( 2 )
-name = "Lolislash"
+name = "Special"
 description = "A sweet hit"
 icon = ExtResource( 1 )
 mana_cost = 3
 is_offensive = true
 targets = 1
+num_targets = 1
+damage = 15
+min_damage_reduction = 0.0
+max_damage_reduction = 0.0
 success_chance = 1.0

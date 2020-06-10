@@ -106,6 +106,7 @@ func play_turn():
 	if targets != []:
 		yield(turn_queue.play_turn(action, targets), "completed")
 	if active:
+		battler.defenseTurns = battler.defenseTurns - 1
 		play_turn()
 
 func get_active_battler() -> Battler:

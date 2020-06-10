@@ -1,15 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/party/Party.gd" type="Script" id=1]
 [ext_resource path="res://src/party/PartyMember.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/combat/battlers/skills/Player Skills/Offensive Skills/Shoot.tres" type="Resource" id=3]
 [ext_resource path="res://assets/sprites/battlers/godette_portrait_256.png" type="Texture" id=4]
 [ext_resource path="res://src/combat/animation/GodetteAnim.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/combat/battlers/skills/LearnedSkill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/combat/battlers/skills/Player Skills/Offensive Skills/Lollislash.tres" type="Resource" id=7]
 [ext_resource path="res://src/combat/battlers/ai/PlayerInput.gd" type="Script" id=8]
-[ext_resource path="res://assets/sprites/battlers/robi_portrait_256.png" type="Texture" id=11]
-[ext_resource path="res://src/combat/animation/RobiAnim.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/combat/battlers/skills/Player Skills/Defensive Skills/Defend.tres" type="Resource" id=9]
 
 [node name="Party" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,34 +30,12 @@ dmg = 9
 [node name="LolliSlash" parent="Chloe/Battler/Skills" index="0" instance=ExtResource( 6 )]
 skill = ExtResource( 7 )
 
+[node name="Defend" parent="Chloe/Battler/Skills" index="1" instance=ExtResource( 6 )]
+skill = ExtResource( 9 )
+
 [node name="AI" parent="Chloe/Battler" index="5"]
-script = ExtResource( 8 )
-
-[node name="Robi" parent="." instance=ExtResource( 2 )]
-
-[node name="Battler" parent="Robi" index="0"]
-max_health = 50
-max_mana = 15
-speed = 5
-Skills = [ ExtResource( 3 ) ]
-party_member = true
-turn_order_icon = ExtResource( 11 )
-
-[node name="RobiAnim" parent="Robi/Battler/Skin" index="2" instance=ExtResource( 12 )]
-
-[node name="Attack" parent="Robi/Battler/Actions" index="0"]
-dmg = 6
-
-[node name="Slash" parent="Robi/Battler/Skills" index="0" instance=ExtResource( 6 )]
-skill = ExtResource( 3 )
-
-[node name="AI" parent="Robi/Battler" index="5"]
 script = ExtResource( 8 )
 
 [editable path="Chloe"]
 
 [editable path="Chloe/Battler"]
-
-[editable path="Robi"]
-
-[editable path="Robi/Battler"]

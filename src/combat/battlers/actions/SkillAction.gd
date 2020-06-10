@@ -19,7 +19,7 @@ func execute(targets):
 	for target in targets:
 		randomize()
 		if randf() < skill.success_chance:
-			skill.use(target)
+			skill.use(actor, target)
 		else:
 			skill.emit_signal("missed", "Miss!")
 		pass

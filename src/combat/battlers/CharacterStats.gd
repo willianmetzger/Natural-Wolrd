@@ -13,6 +13,8 @@ signal mana_depleted()
 var modifiers = {}
 
 var health : int
+var defense : float
+var defenseTurns : int
 var mana : int setget set_mana
 export var max_health : int = 1 setget set_max_health, _get_max_health
 export var max_mana : int = 0 setget set_max_mana, _get_max_mana
@@ -25,6 +27,8 @@ var is_alive : bool setget ,_is_alive
 func reset():
 	health = self.max_health
 	mana = self.max_mana
+	defense = 0
+	defenseTurns = 0
 	
 func copy() -> CharacterStats:
 	# Perform a more accurate duplication, as normally Resource duplication
@@ -37,7 +41,10 @@ func copy() -> CharacterStats:
 
 func take_damage(damage):
 	var old_health = health
-	health -= damage
+	if defenseTurns > 0:
+		health -= (damage - (damage * defense))
+	else:
+		health -= damage
 	emit_signal("health_changed", health, old_health)
 	health = max(0, health)
 	if health == 0:
