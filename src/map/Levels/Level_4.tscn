@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/map/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/background/Fundo1.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/NaturalTiles.tres" type="TileSet" id=3]
 [ext_resource path="res://src/map/Triggers/door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/map/Actors/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/map/Actors/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/map/Actors/Morcego3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/map/EnemySpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/items/Chest.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/map/Actors/Morcego.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/map/Actors/Morcego2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/map/Actors/Gafanhoto.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/map/Actors/MorcegoGafanhoto.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/map/Actors/GafanhotoMorcego.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/map/Actors/Beija-Flor.tscn" type="PackedScene" id=14]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -56,7 +62,7 @@ position = Vector2( 3169.47, 189.641 )
 
 [node name="EnemySpawner" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 951.173, 1053.41 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -68,7 +74,7 @@ position = Vector2( 253.233, 0 )
 
 [node name="EnemySpawner3" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 595.026, 1489.42 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -80,7 +86,7 @@ position = Vector2( 253.233, 0 )
 
 [node name="EnemySpawner8" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 590.709, 716.69 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -92,7 +98,7 @@ position = Vector2( 253.233, 0 )
 
 [node name="EnemySpawner12" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1028.88, 643.302 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -104,7 +110,7 @@ position = Vector2( 298.662, -1.10803 )
 
 [node name="EnemySpawner4" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1456.91, 1052.12 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -116,7 +122,7 @@ position = Vector2( 366.283, -9.04407 )
 
 [node name="EnemySpawner5" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2134.97, 869.202 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -128,7 +134,7 @@ position = Vector2( 275.742, 1.85059 )
 
 [node name="EnemySpawner6" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2697.51, 592.875 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -140,7 +146,7 @@ position = Vector2( 407.135, 0 )
 
 [node name="EnemySpawner7" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2894.36, 398.074 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -152,7 +158,7 @@ position = Vector2( 407.135, 0 )
 
 [node name="EnemySpawner2" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2051.52, 2181.58 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -164,7 +170,7 @@ position = Vector2( 609.447, 0 )
 
 [node name="EnemySpawner11" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 818.266, 2193.37 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -176,7 +182,7 @@ position = Vector2( 565.999, 0 )
 
 [node name="EnemySpawner9" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2803.64, 1476.74 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -188,7 +194,7 @@ position = Vector2( 126.616, -3.01477 )
 
 [node name="EnemySpawner10" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 3191.19, 1817.13 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = 1
 

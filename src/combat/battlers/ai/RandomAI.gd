@@ -7,7 +7,8 @@ func choose_action(actor : Battler, battlers : Array = []):
 	# we use yield even though determining an action is instantaneous
 	# because the combat arena expects this to be an async function
 	yield(get_tree(), "idle_frame")
-	return actor.actions.get_child(0)
+	return actor.actions.get_child(randi()%actor.actions.get_child_count())
+	#return actor.actions.get_child(0)
 	
 func choose_target(actor : Battler, action : CombatAction, battlers : Array = []):
 	# Chooses a target to perform an action on

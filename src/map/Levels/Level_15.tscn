@@ -1,13 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/map/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/map/Triggers/door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/items/Chest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/map/Actors/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/map/Actors/Morcego3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/map/EnemySpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/map/Actors/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/background.png" type="Texture" id=7]
 [ext_resource path="res://assets/tileset.png" type="Texture" id=8]
+[ext_resource path="res://src/map/Actors/Morcego.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/map/Actors/Morcego2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/map/Actors/Gafanhoto.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/map/Actors/MorcegoGafanhoto.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/map/Actors/GafanhotoMorcego.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/map/Actors/Beija-Flor.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -21,6 +27,11 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -77,112 +88,112 @@ position = Vector2( 347.984, 932.999 )
 
 [node name="EnemySpawner" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 655.913, 1284.25 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner2" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 981.822, 1274.06 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner18" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1287.66, 1300.09 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner3" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2265.07, 588.664 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner14" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1721.73, 591.917 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner15" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1129.58, 595.171 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner17" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 397.534, 582.157 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner11" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 3241.32, 355.182 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner12" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2785.83, 605.192 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner7" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1091.63, 1736.7 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner10" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 641.507, 2250.96 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner19" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1293.35, 2566.35 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner20" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 138.342, 2563.1 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner22" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 388.866, 2907.98 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner23" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 131.835, 3165.01 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner24" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 577.572, 2904.72 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner25" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1465.79, 2888.46 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner26" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1472.3, 3067.4 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner27" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 1830.19, 2576.12 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner29" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 3209.69, 1717.18 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner30" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2301.95, 3142.23 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner31" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2724.91, 3158.5 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner32" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2074.2, 2842.91 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner35" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 827.961, 3337.99 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner36" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 118.337, 3349.38 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner34" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2903.86, 3327.69 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner8" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 2304.38, 1234.19 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]
 
 [node name="EnemySpawner9" parent="EnemySpawners" instance=ExtResource( 5 )]
 position = Vector2( 561.969, 1751.46 )
-enemy_list = [ ExtResource( 4 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ) ]

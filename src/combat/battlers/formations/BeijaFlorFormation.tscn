@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/combat/battlers/Formation.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/background/StonePlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/combat/battlers/enemies/BeijaFlorBattler.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/battlers/Beija_flor.png" type="Texture" id=4]
+
+[node name="Formation" type="Node"]
+script = ExtResource( 1 )
+platform_template = ExtResource( 2 )
+
+[node name="BeijaFlor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 328.087, 565.518 )
+turn_order_icon = ExtResource( 4 )
+
+[node name="BeijaFlor2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 438.169, 703.66 )
+turn_order_icon = ExtResource( 4 )
+
+[node name="BeijaFlor3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 310.819, 796.474 )
+turn_order_icon = ExtResource( 4 )

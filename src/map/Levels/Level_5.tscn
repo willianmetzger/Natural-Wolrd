@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/tilesets/NaturalTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/sprites/background/Clareira.png" type="Texture" id=2]
 [ext_resource path="res://src/map/Levels/Level.gd" type="Script" id=3]
 [ext_resource path="res://src/items/Chest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/map/Actors/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/map/Actors/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/map/Actors/Morcego3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/map/EnemySpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/map/Triggers/door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/map/Actors/Morcego.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/map/Actors/Morcego2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/map/Actors/Gafanhoto.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/map/Actors/MorcegoGafanhoto.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/map/Actors/GafanhotoMorcego.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/map/Actors/Beija-Flor.tscn" type="PackedScene" id=14]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
@@ -64,7 +70,7 @@ position = Vector2( 1059.85, 1981.13 )
 
 [node name="EnemySpawner" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1148.95, 741.311 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -76,7 +82,7 @@ position = Vector2( 204.446, -2.80959 )
 
 [node name="EnemySpawner2" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1570.26, 475.856 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = 1
 
@@ -88,7 +94,7 @@ position = Vector2( 243.353, -1.43198 )
 
 [node name="EnemySpawner3" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2362.17, 294.353 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -100,7 +106,7 @@ position = Vector2( 241.021, 6.15167 )
 
 [node name="EnemySpawner4" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2496.07, 974.992 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -112,7 +118,7 @@ position = Vector2( 241.021, 6.15167 )
 
 [node name="EnemySpawner5" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1497.47, 1490.51 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -124,7 +130,7 @@ position = Vector2( 241.021, 6.15167 )
 
 [node name="EnemySpawner6" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2173.23, 1487.86 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -136,7 +142,7 @@ position = Vector2( 241.021, 6.15167 )
 
 [node name="EnemySpawner7" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2513.62, 1879.52 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -148,7 +154,7 @@ position = Vector2( 241.021, 6.15167 )
 
 [node name="EnemySpawner8" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 893.356, 2263.43 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -160,7 +166,7 @@ position = Vector2( 563.122, 6.15167 )
 
 [node name="EnemySpawner9" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2221.17, 2577.68 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -172,7 +178,7 @@ position = Vector2( 563.122, 6.15167 )
 
 [node name="EnemySpawner10" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 781.841, 3021.16 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -184,7 +190,7 @@ position = Vector2( 476.577, 9.24249 )
 
 [node name="EnemySpawner11" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 1761.65, 3024.25 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
@@ -196,7 +202,7 @@ position = Vector2( 407.966, -1.14423 )
 
 [node name="EnemySpawner12" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 3107.16, 3347.19 )
-enemy_list = [ ExtResource( 6 ) ]
+enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 

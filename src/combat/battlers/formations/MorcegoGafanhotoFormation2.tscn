@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/combat/battlers/Formation.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/background/StonePlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/combat/battlers/enemies/GafanhotoBattler.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/combat/battlers/enemies/MorcegoBattler.tscn" type="PackedScene" id=4]
+
+[node name="Formation" type="Node"]
+script = ExtResource( 1 )
+platform_template = ExtResource( 2 )
+
+[node name="Morcego" parent="." instance=ExtResource( 4 )]
+position = Vector2( 671.225, 616.339 )
+
+[node name="Gafanhoto" parent="." instance=ExtResource( 3 )]
+position = Vector2( 461.372, 416.26 )
+
+[node name="Gafanhoto2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 459.322, 816.116 )
