@@ -9,7 +9,7 @@ func execute(targets):
 
 	for target in targets:
 		yield(actor.skin.move_to(target), "completed")
-		target.take_damage(dmg)
+		target.take_damage(dmg * actor.damage_mod)
 		yield(actor.get_tree().create_timer(1.0), "timeout")
 		yield(return_to_start_position(), "completed")
 	return true

@@ -49,7 +49,7 @@ scale = Vector2( 0.65748, 0.65748 )
 limit_right = 3327
 
 [node name="door" parent="." instance=ExtResource( 8 )]
-position = Vector2( 3142.39, 221.295 )
+position = Vector2( 3140.5, 228.858 )
 
 [node name="xbox_a" type="Sprite" parent="."]
 position = Vector2( 624.413, 1123.81 )
@@ -68,7 +68,10 @@ __meta__ = {
 }
 
 [node name="Chest" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3148.02, 957.098 )
+position = Vector2( 3148.38, 960.324 )
+
+[node name="Chest1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 877.055, 256.77 )
 
 [node name="EnemySpawners" type="Node2D" parent="."]
 

@@ -33,6 +33,9 @@ func load_level():
 		level = load("res://src/map/Levels/Rest_Level.tscn").instance()
 		add_child(level)
 		player = $Level/Player
+		player.party = party
+		party.player = player
+		party.GUI = GUI
 		player.connect("enemies_encountered", self,  "enter_battle")	
 		
 	elif current_level == 5:
@@ -40,6 +43,9 @@ func load_level():
 		level = load("res://src/map/Levels/Boss_Level" + game_stage + ".tscn").instance()
 		add_child(level)
 		player = $Level/Player
+		player.party = party
+		party.player = player
+		party.GUI = GUI
 		player.connect("enemies_encountered", self,  "enter_battle")
 		
 	else :
@@ -49,6 +55,9 @@ func load_level():
 		add_child(level)
 		possible_levels.erase(possible_levels[level_chosen])
 		player = $Level/Player
+		player.party = party
+		party.player = player
+		party.GUI = GUI
 		player.connect("enemies_encountered", self,  "enter_battle")
 		
 	current_level += 1
@@ -58,6 +67,9 @@ func load_level_byId(id):
 	add_child(level)
 	possible_levels.erase(possible_levels[id])
 	player = $Level/Player
+	player.party = party
+	party.player = player
+	party.GUI = GUI
 	player.connect("enemies_encountered", self,  "enter_battle")
 	current_level += 1
 
@@ -71,6 +83,7 @@ func enter_battle(formation: Formation):
 	transitioning = true
 	yield(transition.fade_to_color(), "completed")
 
+	party.inBattle = true
 	remove_child(GUI)
 	remove_child(level)
 	combat_arena = combat_arena_scene.instance()
@@ -94,8 +107,10 @@ func _on_CombatArena_battle_completed(arena):
 	yield(transition.fade_to_color(), "completed")
 	combat_arena.queue_free()
 	
+	party.inBattle = false
 	add_child(level)
 	add_child(GUI)
+	party.updateGUI()
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
 	music_player.stop()
@@ -112,4 +127,5 @@ func _on_CombatArena_game_over() -> void:
 
 func _on_GameOverInterface_return_to_title():
 	game_over_interface.hide()
+	get_tree().reload_current_scene()
 	get_tree().change_scene("res://src/map/TitleScreen.tscn")

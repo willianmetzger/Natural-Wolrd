@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/font_GUI_20.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/sprites/battlers/godette_portrait_256.png" type="Texture" id=2]
 [ext_resource path="res://assets/theme/icons/potion_mana.png" type="Texture" id=3]
 [ext_resource path="res://assets/theme/icons/potion_health.png" type="Texture" id=4]
 [ext_resource path="res://src/combat/interface/bars/lifebar/fill.png" type="Texture" id=5]
@@ -13,6 +12,10 @@
 [ext_resource path="res://assets/sprites/icons/espada_de_espinhos.png" type="Texture" id=11]
 [ext_resource path="res://assets/sprites/icons/semente_do_coracao.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprites/battlers/ChloePortrait.png" type="Texture" id=13]
+[ext_resource path="res://src/party/GUI_Item_Description.gd" type="Script" id=14]
+[ext_resource path="res://assets/sprites/xbox_buttons/xbox_rb.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/xbox_buttons/xbox_lb.png" type="Texture" id=16]
+[ext_resource path="res://src/party/GUI.gd" type="Script" id=17]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
@@ -21,8 +24,18 @@ expand_margin_right = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.215686, 0.533333, 0.239216, 1 )
+border_blend = true
+
 [node name="GUI" type="CanvasLayer"]
 layer = 50
+script = ExtResource( 17 )
 
 [node name="ItemBar" type="Control" parent="."]
 anchor_right = 1.0
@@ -58,8 +71,10 @@ anchor_left = -2.4
 anchor_top = 0.4
 anchor_right = 1.0
 anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
+margin_left = 0.200684
+margin_top = -0.200073
+margin_right = -685.0
+margin_bottom = 21.7999
 rect_scale = Vector2( 3, 2.8 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -67,13 +82,13 @@ __meta__ = {
 }
 
 [node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe"]
-anchor_left = -2.4
-anchor_top = 0.4
-anchor_right = 1.0
-anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
-rect_scale = Vector2( 3, 2.8 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -42.8089
+margin_top = -26.4588
+margin_right = 149.191
+margin_bottom = -4.4588
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,60 +109,61 @@ __meta__ = {
 }
 
 [node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe"]
-anchor_left = -2.4
-anchor_top = 0.65
-anchor_right = -2.4
-anchor_bottom = 0.7
-margin_top = 17.9243
-margin_right = 396.0
-margin_bottom = 70.9243
-rect_scale = Vector2( 3, 2.8 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -41.588
+margin_top = 55.9087
+margin_right = 150.412
+margin_bottom = 77.9087
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Chloe2" type="TextureRect" parent="ItemBar/Label"]
+[node name="Ally1" type="TextureRect" parent="ItemBar/Label"]
 visible = false
 anchor_left = 0.1
 anchor_right = 0.1
-margin_left = 145.389
-margin_top = 1.47347
-margin_right = 403.389
-margin_bottom = 259.473
+margin_left = 144.579
+margin_top = 1.08428
+margin_right = 402.579
+margin_bottom = 259.084
 rect_scale = Vector2( -0.2, 0.2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Ally1"]
 anchor_left = -2.4
 anchor_top = 0.4
 anchor_right = 1.0
 anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
+margin_left = 0.200684
+margin_top = -0.200073
+margin_right = -685.0
+margin_bottom = 21.7999
 rect_scale = Vector2( 3, 2.8 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe2"]
-anchor_left = -2.4
-anchor_top = 0.4
-anchor_right = 1.0
-anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
-rect_scale = Vector2( 3, 2.8 )
+[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Ally1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -42.8089
+margin_top = -26.4588
+margin_right = 149.191
+margin_bottom = -4.4588
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Chloe2"]
+[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Ally1"]
 anchor_left = -2.4
 anchor_top = 0.65
 anchor_right = -2.4
@@ -161,61 +177,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe2"]
-anchor_left = -2.4
-anchor_top = 0.65
-anchor_right = -2.4
-anchor_bottom = 0.7
-margin_top = 17.9243
-margin_right = 396.0
-margin_bottom = 70.9243
-rect_scale = Vector2( 3, 2.8 )
+[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Ally1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -41.588
+margin_top = 55.9087
+margin_right = 150.412
+margin_bottom = 77.9087
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Chloe3" type="TextureRect" parent="ItemBar/Label"]
+[node name="Ally2" type="TextureRect" parent="ItemBar/Label"]
 visible = false
 anchor_left = 0.1
 anchor_right = 0.1
-margin_left = 384.978
+margin_left = 384.074
 margin_top = -0.113198
-margin_right = 642.978
+margin_right = 642.074
 margin_bottom = 257.887
 rect_scale = Vector2( -0.2, 0.2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+[node name="Lifebar" type="TextureRect" parent="ItemBar/Label/Ally2"]
 anchor_left = -2.4
 anchor_top = 0.4
 anchor_right = 1.0
 anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
+margin_left = 0.200684
+margin_top = -0.200073
+margin_right = -685.0
+margin_bottom = 21.7999
 rect_scale = Vector2( 3, 2.8 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Chloe3"]
-anchor_left = -2.4
-anchor_top = 0.4
-anchor_right = 1.0
-anchor_bottom = 0.4
-margin_right = 396.0
-margin_bottom = 53.0
-rect_scale = Vector2( 3, 2.8 )
+[node name="Lifebarfill" type="TextureRect" parent="ItemBar/Label/Ally2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -42.8089
+margin_top = -26.4588
+margin_right = 149.191
+margin_bottom = -4.4588
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Chloe3"]
+[node name="Manabar" type="TextureRect" parent="ItemBar/Label/Ally2"]
 anchor_left = -2.4
 anchor_top = 0.65
 anchor_right = -2.4
@@ -229,102 +246,134 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Chloe3"]
-anchor_left = -2.4
-anchor_top = 0.65
-anchor_right = -2.4
-anchor_bottom = 0.7
-margin_top = 17.9243
-margin_right = 396.0
-margin_bottom = 70.9243
-rect_scale = Vector2( 3, 2.8 )
+[node name="Manabarfill" type="TextureRect" parent="ItemBar/Label/Ally2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -41.588
+margin_top = 55.9087
+margin_right = 150.412
+margin_bottom = 77.9087
+rect_scale = Vector2( -3, 2.8 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HeartSeed" type="TextureRect" parent="ItemBar/Label"]
+visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -677.911
-margin_top = 4.76837e-07
-margin_right = -677.911
+margin_left = -678.0
+margin_top = -0.0199995
+margin_right = -1030.0
+margin_bottom = -15.0
 rect_scale = Vector2( 1.5412, 1.33509 )
+mouse_filter = 0
+mouse_default_cursor_shape = 2
 texture = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+description = "Semente do Coração: Os seres que aqui habitavam  procuravam pela semente da vida...parece que finalmente a criaram.
+
+ Efeito: Concede 50% de Vida extra para Chloe e seus aliados."
 
 [node name="ThornSword" type="TextureRect" parent="ItemBar/Label"]
+visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -576.614
-margin_top = 4.76837e-07
-margin_right = -576.614
+margin_left = -577.0
+margin_top = -0.0199995
+margin_right = -929.0
+margin_bottom = -15.0
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 11 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+description = "Espada de Espinhos: Eu lhes mostrei que apenas os mais fortes sobrevivem, agora devo reafirmar minhas próprias leis.
+
+Efeito: Aumenta o dano de Chloe e seus aliados em 45%."
 
 [node name="FloralShield" type="TextureRect" parent="ItemBar/Label"]
+visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -484.54
-margin_top = 4.76837e-07
-margin_right = -484.54
+margin_left = -485.0
+margin_top = -0.0199995
+margin_right = -837.0
+margin_bottom = -15.0
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 10 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+description = "Escudo Floral:  Vocês que eram tão delicadas, agora se tornam minha maior resistência.
+
+Efeito: Aumenta a defesa de Chloe e seus aliados em 25%."
 
 [node name="GliciniaCrown" type="TextureRect" parent="ItemBar/Label"]
+visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -395.448
-margin_top = 4.76837e-07
-margin_right = -395.448
+margin_left = -395.0
+margin_top = -0.0199995
+margin_right = -747.0
+margin_bottom = -15.0
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 8 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+description = "Coroa de Glicinia: Algo tão precioso, como foi parar aqui?
+
+Efeito: Concede 50% de energia extra para Chloe e seus aliados."
 
 [node name="LeafShoes" type="TextureRect" parent="ItemBar/Label"]
+visible = false
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -297.057
-margin_top = -1.0
-margin_right = -297.057
-margin_bottom = -1.0
+margin_left = -297.0
+margin_top = -1.02
+margin_right = -649.0
+margin_bottom = -16.0
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 9 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+description = "Sapatos de Folhas: Será que isto também foi feito pela mãe? Certamente uma peça única.
+
+Efeito: Aumenta em 30% a Velocidade de Chloe e seus aliados."
 
 [node name="HealthPotion" type="TextureRect" parent="ItemBar/Label"]
 anchor_left = 0.8
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.84363
-margin_top = -1.94806
-margin_right = 1.84363
-margin_bottom = -1.94806
+margin_left = 2.0
+margin_top = -2.02
+margin_right = -350.0
+margin_bottom = -1.0
 rect_scale = Vector2( 1.5412, 1.33509 )
+mouse_filter = 0
 texture = ExtResource( 4 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -343,17 +392,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="ItemBar/Label/HealthPotion"]
+margin_left = -42.363
+margin_top = 5.01893
+margin_right = 54.637
+margin_bottom = 73.0189
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ManaPotion" type="TextureRect" parent="ItemBar/Label"]
 anchor_left = 0.86
 anchor_top = 0.13
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.49646
-margin_top = -1.94806
-margin_right = -2.49646
-margin_bottom = -1.94806
+margin_left = -2.20007
+margin_top = -2.02
+margin_right = -239.0
+margin_bottom = -2.0
 rect_scale = Vector2( 1.5412, 1.33509 )
 texture = ExtResource( 3 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -371,3 +432,39 @@ text = "x0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="ItemBar/Label/ManaPotion"]
+margin_left = 50.322
+margin_top = 5.26158
+margin_right = 147.322
+margin_bottom = 73.2616
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 15 )
+
+[node name="ItemText" type="RichTextLabel" parent="ItemBar/Label"]
+visible = false
+margin_left = 880.002
+margin_top = 49.4972
+margin_right = 1655.0
+margin_bottom = 178.497
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Semente do coração: Os seres que habitavam esta terra procuravam pela semente da vida...parece que finalmente a criaram.
+
+Efeito: Concede 25% de Vida extra para Chloe e seus aliados."
+scroll_active = false
+[connection signal="mouse_entered" from="ItemBar/Label/HeartSeed" to="ItemBar/Label/HeartSeed" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/HeartSeed" to="ItemBar/Label/HeartSeed" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/ThornSword" to="ItemBar/Label/ThornSword" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/ThornSword" to="ItemBar/Label/ThornSword" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="ItemBar/Label/ThornSword" to="ItemBar/Label/ThornSword" method="_on_ThornSword_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/FloralShield" to="ItemBar/Label/FloralShield" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/FloralShield" to="ItemBar/Label/FloralShield" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/GliciniaCrown" to="ItemBar/Label/GliciniaCrown" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/GliciniaCrown" to="ItemBar/Label/GliciniaCrown" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/LeafShoes" to="ItemBar/Label/LeafShoes" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/LeafShoes" to="ItemBar/Label/LeafShoes" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/HealthPotion" to="ItemBar/Label/HealthPotion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/HealthPotion" to="ItemBar/Label/HealthPotion" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ItemBar/Label/ManaPotion" to="ItemBar/Label/ManaPotion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemBar/Label/ManaPotion" to="ItemBar/Label/ManaPotion" method="_on_mouse_exited"]

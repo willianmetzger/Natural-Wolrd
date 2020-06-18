@@ -6,9 +6,12 @@ enum facing{
 	Right
 }
 
+var party
+
 export var stomp_impulse = 1000.0
 var _camera_current_limits: Vector3
 var sprDir = facing.Left
+var speedModifier = 1
 
 signal enemies_encountered(formation)
 
@@ -24,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	
 	if Input.is_action_just_pressed("move_left"):
 		if sprDir == facing.Right:
 			scale.x *= -1
@@ -54,7 +58,7 @@ func calculate_move_velocity(
 		
 		# Calculate X #
 	var new_velocity = linear_velocity
-	new_velocity.x = speed.x * direction.x
+	new_velocity.x = speed.x * direction.x * speedModifier
 	
 		# Calculate Y #
 	new_velocity.y += gravity * get_physics_process_delta_time()
@@ -70,7 +74,6 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	new_velocity.y  = -impulse
 	return new_velocity
 
-
 """
 Set new limits to the camera
 """
@@ -81,3 +84,6 @@ func set_camera_limits(left: float, right: float, top: float) -> void:
 		player_camera.limit_left = left
 	if right != -1:
 		player_camera.limit_right = right
+
+func collect(itemId: int):
+	party.collect(itemId)

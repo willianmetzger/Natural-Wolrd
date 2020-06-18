@@ -13,12 +13,13 @@ signal mana_depleted()
 var modifiers = {}
 
 var health : int
+var damage_mod: float = 1.0
 var defense : float
 var defenseTurns : int
-var mana : int setget set_mana
+var mana : int
 export var max_health : int = 1 setget set_max_health, _get_max_health
 export var max_mana : int = 0 setget set_max_mana, _get_max_mana
-export var speed : int = 1 setget ,_get_speed
+export var speed : int = 1 setget set_speed,_get_speed
 export(Array, String) var consumables
 export(Array, String) var items
 export(Array, Resource) var Skills
@@ -54,6 +55,11 @@ func heal(amount : int):
 	var old_health = health
 	health = min(health + amount, max_health)
 	emit_signal("health_changed", health, old_health)
+	
+func mana_heal(amount : int):
+	var old_mana = mana
+	mana = min(mana + amount, max_mana)
+	emit_signal("mana_changed", mana, old_mana)
 
 func set_mana(value : int):
 	var old_mana = mana
@@ -71,6 +77,9 @@ func set_max_mana(value : int):
 	if value == null:
 		return
 	max_mana = max(0, value)
+	
+func set_speed(value: int):
+	speed = value
 
 func add_modifier(id : int, modifier):
 	modifiers[id] = modifier

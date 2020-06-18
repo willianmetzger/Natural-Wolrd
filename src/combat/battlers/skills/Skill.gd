@@ -23,5 +23,5 @@ func use(actor : Battler, target : Battler):
 		actor.defense = rand_range(min_damage_reduction, max_damage_reduction)
 		actor.defenseTurns = 3
 	else:
-		target.take_damage(damage)
+		target.take_damage(damage * actor.damage_mod)
 	pass

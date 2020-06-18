@@ -1,21 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/door.png" type="Texture" id=1]
 [ext_resource path="res://src/map/Triggers/Door.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/xbox_buttons/xbox_x.png" type="Texture" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 222.67, 222.916 )
 
 [node name="door" type="Sprite"]
 scale = Vector2( 0.4, 0.4 )
-z_index = -1
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
+[node name="ButtonUI" type="Node2D" parent="."]
+visible = false
+position = Vector2( -36.7919, -326.411 )
+scale = Vector2( 1, 1 )
+
+[node name="XboxButton" type="TextureRect" parent="ButtonUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0.64165, 53.2593 )
+scale = Vector2( 2.82477, 3.33277 )
+texture = ExtResource( 4 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
