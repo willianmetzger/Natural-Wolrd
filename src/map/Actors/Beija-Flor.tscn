@@ -42,11 +42,11 @@ animations = [ {
 "frames": [ ExtResource( 29 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
-"speed": 60.0
+"speed": 30.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 53.3086, 52.2865 )
+extents = Vector2( 53.3086, 82.9818 )
 
 [node name="Enemy" type="KinematicBody2D"]
 scale = Vector2( 0.665, 0.665 )
@@ -56,19 +56,19 @@ script = ExtResource( 3 )
 speed = Vector2( 400, 1400 )
 
 [node name="enemy" type="AnimatedSprite" parent="."]
-position = Vector2( 0.0512724, -71.0278 )
+position = Vector2( 0.0512724, -69.803 )
 scale = Vector2( 0.323176, 0.294948 )
 frames = SubResource( 1 )
-frame = 16
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.38813, -52.929 )
+position = Vector2( 3.38813, -68.8517 )
 shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 3.76456, -54.8986 )
-scale = Vector2( 5.07554, 5.34236 )
+position = Vector2( 4.98938, -75.1081 )
+scale = Vector2( 12.9144, 12.0176 )
 process_parent = true
 physics_process_parent = true
 

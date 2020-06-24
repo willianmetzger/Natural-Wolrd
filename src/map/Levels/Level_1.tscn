@@ -1,16 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/NaturalTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/sprites/background/Fundo1.png" type="Texture" id=2]
 [ext_resource path="res://src/map/Levels/Level.gd" type="Script" id=3]
 [ext_resource path="res://src/items/Chest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/map/Actors/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/teclas/tecla_w.png" type="Texture" id=6]
 [ext_resource path="res://src/map/EnemySpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/map/Triggers/door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/font_default.tres" type="DynamicFont" id=9]
 [ext_resource path="res://assets/sprites/xbox_buttons/xbox_a.png" type="Texture" id=10]
 [ext_resource path="res://src/map/Actors/Morcego.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/map/Actors/Gafanhoto.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/teclas/espaço.png" type="Texture" id=13]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
@@ -25,9 +27,9 @@ layer = -100
 [node name="background" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1.43198
+margin_top = 4.22147
 margin_right = 0.00012207
-margin_bottom = 1.43201
+margin_bottom = 4.22144
 texture = ExtResource( 2 )
 stretch_mode = 1
 __meta__ = {
@@ -52,9 +54,19 @@ limit_right = 3327
 position = Vector2( 3140.5, 228.858 )
 
 [node name="xbox_a" type="Sprite" parent="."]
-position = Vector2( 624.413, 1123.81 )
+position = Vector2( 606.624, 1124 )
 scale = Vector2( 0.528287, 0.39801 )
 texture = ExtResource( 10 )
+
+[node name="key_w" type="Sprite" parent="."]
+position = Vector2( 367.857, 1121.73 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="key_space" type="Sprite" parent="."]
+position = Vector2( 466.491, 1123.8 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 182.229
@@ -62,7 +74,7 @@ margin_top = 1103.41
 margin_right = 836.229
 margin_bottom = 1164.41
 custom_fonts/font = ExtResource( 9 )
-text = "Pressione W, Espaço Ou      Para Pular"
+text = "Pressione      ,             Ou        Para Pular"
 __meta__ = {
 "_edit_use_anchors_": false
 }

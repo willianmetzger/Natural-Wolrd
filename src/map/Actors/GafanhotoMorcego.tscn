@@ -1,32 +1,78 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://src/combat/battlers/formations/MorcegoGafanhotoFormation2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/combat/battlers/formations/FormationSelector.gd" type="Script" id=2]
 [ext_resource path="res://src/map/Actors/Enemy.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/battlers/Gafanhoto.png" type="Texture" id=4]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_01.png" type="Texture" id=4]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_12.png" type="Texture" id=5]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_06.png" type="Texture" id=6]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_03.png" type="Texture" id=7]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_00.png" type="Texture" id=8]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_07.png" type="Texture" id=9]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_10.png" type="Texture" id=10]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_02.png" type="Texture" id=11]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_11.png" type="Texture" id=12]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_09.png" type="Texture" id=13]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_34.png" type="Texture" id=14]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_35.png" type="Texture" id=15]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_08.png" type="Texture" id=16]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_05.png" type="Texture" id=17]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_28.png" type="Texture" id=18]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_15.png" type="Texture" id=19]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_25.png" type="Texture" id=20]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_30.png" type="Texture" id=21]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_33.png" type="Texture" id=22]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_31.png" type="Texture" id=23]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_26.png" type="Texture" id=24]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_23.png" type="Texture" id=25]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_16.png" type="Texture" id=26]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_32.png" type="Texture" id=27]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_21.png" type="Texture" id=28]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_14.png" type="Texture" id=29]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_04.png" type="Texture" id=30]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_19.png" type="Texture" id=31]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_17.png" type="Texture" id=32]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_27.png" type="Texture" id=33]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_18.png" type="Texture" id=34]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_24.png" type="Texture" id=35]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_29.png" type="Texture" id=36]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_13.png" type="Texture" id=37]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_20.png" type="Texture" id=38]
+[ext_resource path="res://assets/animations/ini_gafanhoto_andar/Armature_andar_22.png" type="Texture" id=39]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 5 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 28 ), ExtResource( 39 ), ExtResource( 25 ), ExtResource( 35 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 33 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 30.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 79.6606, 45.8867 )
+extents = Vector2( 156.266, 71.5494 )
 
 [node name="Enemy" type="KinematicBody2D"]
-scale = Vector2( 0.665, 0.665 )
+scale = Vector2( -0.665, 0.665 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 3 )
 speed = Vector2( 400, 1400 )
 
-[node name="enemy" type="Sprite" parent="."]
+[node name="enemy" type="AnimatedSprite" parent="."]
 position = Vector2( 5.13345, -66.1338 )
 scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 4 )
+frames = SubResource( 2 )
+animation = "walk"
+frame = 27
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6.02334, -47.2821 )
+position = Vector2( 4.79851, -12.9871 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -0.188224, -52.4516 )
-scale = Vector2( 7.05195, 5.09767 )
+position = Vector2( 7.16068, -53.064 )
+scale = Vector2( 18.8102, 14.4675 )
 process_parent = true
 physics_process_parent = true
 
