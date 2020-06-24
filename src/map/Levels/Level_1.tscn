@@ -25,9 +25,9 @@ layer = -100
 [node name="background" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1.43198
+margin_top = 4.22147
 margin_right = 0.00012207
-margin_bottom = 1.43201
+margin_bottom = 4.22144
 texture = ExtResource( 2 )
 stretch_mode = 1
 __meta__ = {
@@ -44,9 +44,6 @@ tile_data = PoolIntArray( -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 272, 952 )
 scale = Vector2( -0.657, 0.657 )
-
-[node name="player" parent="Player" index="0"]
-frame = 7
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_right = 3327

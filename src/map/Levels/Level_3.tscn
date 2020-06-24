@@ -71,7 +71,7 @@ position = Vector2( 957.757, 1600.63 )
 [node name="EnemySpawners" type="Node2D" parent="."]
 
 [node name="EnemySpawner" parent="EnemySpawners" instance=ExtResource( 7 )]
-position = Vector2( 110.758, 1346.54 )
+position = Vector2( 124.706, 1357.7 )
 enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 direction = -1
 SpeedMultiplier = 0.0
@@ -89,16 +89,16 @@ position = Vector2( -85.7128, 0 )
 position = Vector2( 411.971, -23.7433 )
 
 [node name="EnemySpawner4" parent="EnemySpawners" instance=ExtResource( 7 )]
-position = Vector2( 2795.79, 2256.65 )
+position = Vector2( 2876.71, 2435.94 )
 enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
 
 [node name="LeftPos" parent="EnemySpawners/EnemySpawner4" index="0"]
-position = Vector2( -87.6611, 0 )
+position = Vector2( -159.061, 11.1064 )
 
 [node name="RightPos" parent="EnemySpawners/EnemySpawner4" index="1"]
-position = Vector2( 510.381, 0 )
+position = Vector2( 518.314, -4.76025 )
 
 [node name="EnemySpawner5" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 3199.82, 2139.66 )
@@ -144,7 +144,7 @@ limitedPath = true
 direction = -1
 
 [node name="LeftPos" parent="EnemySpawners/EnemySpawner15" index="0"]
-position = Vector2( -372.595, 0 )
+position = Vector2( -372.595, -16.7371 )
 
 [node name="RightPos" parent="EnemySpawners/EnemySpawner15" index="1"]
 position = Vector2( 611.761, 0 )
