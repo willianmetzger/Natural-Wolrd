@@ -132,18 +132,6 @@ position = Vector2( -129.543, 7.40247 )
 [node name="RightPos" parent="EnemySpawners/EnemySpawner5" index="1"]
 position = Vector2( 275.742, 1.85059 )
 
-[node name="EnemySpawner6" parent="EnemySpawners" instance=ExtResource( 7 )]
-position = Vector2( 2697.51, 592.875 )
-enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
-limitedPath = true
-direction = -1
-
-[node name="LeftPos" parent="EnemySpawners/EnemySpawner6" index="0"]
-position = Vector2( -123.991, -5.55182 )
-
-[node name="RightPos" parent="EnemySpawners/EnemySpawner6" index="1"]
-position = Vector2( 407.135, 0 )
-
 [node name="EnemySpawner7" parent="EnemySpawners" instance=ExtResource( 7 )]
 position = Vector2( 2894.36, 398.074 )
 enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
@@ -215,8 +203,6 @@ position = Vector2( 126.616, -3.01477 )
 [editable path="EnemySpawners/EnemySpawner4"]
 
 [editable path="EnemySpawners/EnemySpawner5"]
-
-[editable path="EnemySpawners/EnemySpawner6"]
 
 [editable path="EnemySpawners/EnemySpawner7"]
 

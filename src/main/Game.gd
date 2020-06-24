@@ -41,7 +41,7 @@ func load_level():
 		
 	elif current_level == 5:
 		remove_child(level)
-		level = load("res://src/map/Levels/Boss_Level" + game_stage + ".tscn").instance()
+		level = load("res://src/map/Levels/Boss_Level.tscn").instance()
 		add_child(level)
 		player = $Level/Player
 		player.party = party
@@ -52,7 +52,7 @@ func load_level():
 		
 	else :
 		remove_child(level)
-		var level_chosen = rand_range(0, possible_levels.size() - 1) as int
+		var level_chosen = rand_range(0, possible_levels.size()) as int
 		level = load(possible_levels[level_chosen]).instance()
 		add_child(level)
 		possible_levels.erase(possible_levels[level_chosen])
