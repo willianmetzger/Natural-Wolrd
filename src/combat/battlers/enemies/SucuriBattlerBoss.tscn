@@ -11,7 +11,7 @@
 [node name="Sucuri" groups=[
 "enemies",
 ] instance=ExtResource( 1 )]
-max_health = 30
+max_health = 80
 max_mana = 50
 speed = 2
 turn_order_icon = ExtResource( 3 )

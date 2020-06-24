@@ -363,4 +363,5 @@ useManaPotion={
 [rendering]
 
 quality/depth/hdr=false
+quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

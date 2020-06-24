@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/animations/ini_sucuri/Armature_parado_00.png" type="Texture" id=3]
 
 [node name="SucuriAnim" instance=ExtResource( 1 )]
+scale = Vector2( 0.5, 0.5 )
 
 [node name="shadow" type="Sprite" parent="." index="0"]
 position = Vector2( 0.821854, -0.67099 )
