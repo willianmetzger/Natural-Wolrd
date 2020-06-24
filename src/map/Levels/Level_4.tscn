@@ -47,7 +47,7 @@ tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1642.81, 1523.39 )
-scale = Vector2( 0.65748, 0.65748 )
+scale = Vector2( -0.657, 0.657 )
 
 [node name="door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 163.433, 165.005 )
@@ -121,7 +121,7 @@ position = Vector2( -54.2642, 0 )
 position = Vector2( 366.283, -9.04407 )
 
 [node name="EnemySpawner5" parent="EnemySpawners" instance=ExtResource( 7 )]
-position = Vector2( 2134.97, 869.202 )
+position = Vector2( 2108, 648.654 )
 enemy_list = [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 12 ) ]
 limitedPath = true
 direction = -1
