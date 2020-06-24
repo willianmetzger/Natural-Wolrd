@@ -10,8 +10,9 @@ var party
 
 export var stomp_impulse = 1000.0
 var _camera_current_limits: Vector3
-var sprDir = facing.Left
+var sprDir = facing.Right
 var speedModifier = 1
+onready var animator = $player
 
 signal enemies_encountered(formation)
 
@@ -27,6 +28,8 @@ func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	
+	control_animation()
 	
 	if Input.is_action_just_pressed("move_left"):
 		if sprDir == facing.Right:
@@ -84,6 +87,14 @@ func set_camera_limits(left: float, right: float, top: float) -> void:
 		player_camera.limit_left = left
 	if right != -1:
 		player_camera.limit_right = right
+		
+func control_animation():
+	if _velocity.y != 0:
+		animator.animation = "jump"
+	elif _velocity.x != 0:
+		animator.animation = "walk"
+	else:
+		animator.animation = "idle"
 
 func collect(itemId: int):
 	party.collect(itemId)

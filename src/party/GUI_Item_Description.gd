@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 export(String, MULTILINE) var description
 

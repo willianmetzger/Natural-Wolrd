@@ -1,18 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/interface/menus/Quit.gd" type="Script" id=1]
 [ext_resource path="res://src/interface/menus/NewGame.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/fonts/default_theme/montserrat_eb_128.tres" type="DynamicFont" id=4]
 [ext_resource path="res://src/interface/menus/TitleScreen.gd" type="Script" id=5]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://src/interface/menus/Credits.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/icons/Arrow.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.329412, 0.462745, 0.376471, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.236141, 0.293457, 0.255246, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 21.1027
+margin_top = 3.01468
+margin_right = 21.1027
+margin_bottom = 3.01465
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+TitleButtons = [ NodePath("VBoxContainer/NewGame"), NodePath("VBoxContainer/Credits"), NodePath("VBoxContainer/Quit") ]
+TitleArrowPos = [ NodePath("ArrowPos0"), NodePath("ArrowPos1"), NodePath("ArrowPos2") ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -59,7 +92,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer"]
 margin_left = 125.0
 margin_top = 84.0
 margin_right = 415.0
@@ -68,11 +101,13 @@ rect_min_size = Vector2( 290, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 flat = true
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+labelPath = NodePath("../../Panel")
 
-[node name="Label" type="Label" parent="VBoxContainer/Options"]
+[node name="Label" type="Label" parent="VBoxContainer/Credits"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -83,7 +118,7 @@ margin_right = 100.5
 margin_bottom = 30.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 3 )
-text = "Opções"
+text = "Creditos"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,8 +168,88 @@ custom_colors/font_color_shadow = Color( 0.00784314, 0.462745, 0.0745098, 1 )
 custom_constants/shadow_offset_x = 8
 text = "Natural World"
 align = 1
+
+[node name="ArrowPos0" type="Position2D" parent="."]
+position = Vector2( 724.601, 638.262 )
+
+[node name="ArrowPos1" type="Position2D" parent="."]
+position = Vector2( 765.498, 724.601 )
+
+[node name="ArrowPos2" type="Position2D" parent="."]
+position = Vector2( 827.035, 806.396 )
+
+[node name="Arrow" type="TextureRect" parent="."]
+anchor_left = 0.017
+anchor_top = 0.03
+anchor_right = 0.017
+anchor_bottom = 0.03
+margin_left = 692.049
+margin_top = 605.86
+margin_right = 756.049
+margin_bottom = 669.86
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.85
+margin_right = 40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 2 )
+text = "Design de Arte
+
+
+Programação
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 3 )
+text = "
+Bruna Ermel
+
+
+
+Nicolas Fontes Gass
+Willian Brasil Metzger"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="mouse_entered" from="VBoxContainer/NewGame" to="." method="_on_NewGame_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/NewGame" to="VBoxContainer/NewGame" method="_on_NewGame_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_Credits_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer/Credits" method="_on_Credits_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]

@@ -1,66 +1,73 @@
 extends CanvasLayer
 class_name GameOverInterface
 
-signal return_to_title()
+onready var ArrowPosition = 0
+onready var Arrow = $Panel/Arrow
 
 onready var panel : = $Panel as Panel
-onready var tween : = $Tween as Tween
-onready var selection_arrow : = $Panel/SelectionArrow as Control
 onready var message_label : = $Panel/VBoxContainer/Message as Label
 onready var try_again_button : = $Panel/VBoxContainer/Options/ReturnToTitle as Button
 onready var options : = $Panel/VBoxContainer/Options
-
-enum Reason { PARTY_DEFEATED }
-
-const MESSAGES = {
-	'party_defeated': 'Your party was defeated!'
-}
 
 var buttons = []
 var selected_button_index : = 0
 
 func _ready() -> void:
 	buttons = options.get_children()
-	_move_arrow()
+	DropSystem.reset()
+	Arrow.rect_position.y = options.rect_position.y + options.get_child(ArrowPosition).rect_position.y + 25
+	Arrow.rect_position.x = options.get_child(ArrowPosition).rect_position.x - 64
 
 func _unhandled_input(event) -> void:
 	if not panel.visible:
-		return
-	if event.is_action_pressed("ui_left"):
-		selected_button_index = max(selected_button_index - 1, 0)
-		_move_arrow()
-	elif event.is_action_pressed("ui_right"):
-		selected_button_index = min(selected_button_index + 1, buttons.size() - 1)
-		_move_arrow()
-	elif event.is_action_pressed("ui_accept"):
-		buttons[selected_button_index].emit_signal("pressed")
-
-func _move_arrow() -> void:
-	var move_to = _get_arrow_position(selected_button_index)
-	tween.interpolate_property(selection_arrow, 
-		"rect_global_position", 
-		selection_arrow.rect_global_position, 
-		move_to, 
-		0.1, 
-		Tween.TRANS_QUART, 
-		Tween.EASE_OUT
-	)
-	tween.start()
-
-func display(reason) -> void:
-	match reason:
-		Reason.PARTY_DEFEATED:
-			message_label.text = MESSAGES['party_defeated']
-	panel.show()
-
-func hide() -> void:
-	panel.hide()
+		return	
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		match ArrowPosition:
+			0:
+				return_to_title()
+			1:
+				quit_game()
+		
+	if Input.is_action_just_pressed("ui_up"):
+			if ArrowPosition > 0:
+				ArrowPosition -= 1
+			else:
+				ArrowPosition = 1
+				
+			Arrow.rect_position.y = options.rect_position.y + options.get_child(ArrowPosition).rect_position.y + 25
+			Arrow.rect_position.x = options.get_child(ArrowPosition).rect_position.x - 64
+			
+	if Input.is_action_just_pressed("ui_down"):
+		if ArrowPosition < 1:
+			ArrowPosition += 1
+		else:
+			ArrowPosition = 0
+			
+		Arrow.rect_position.y = options.rect_position.y + options.get_child(ArrowPosition).rect_position.y + 25
+		Arrow.rect_position.x = options.get_child(ArrowPosition).rect_position.x - 64
 
 func _on_Exit_pressed() -> void:
-	get_tree().quit()
+	quit_game()
 
 func _on_ReturnToTitle_pressed():
-	emit_signal("return_to_title")
+	return_to_title()
+	
+func return_to_title():
+	var titleScreen = load("res://src/interface/menus/TitleScreen.tscn").instance()
+	get_tree().root.add_child(titleScreen)
+	queue_free()
 
-func _get_arrow_position(button_index : int = 0) -> Vector2:
-	return buttons[button_index].get_global_rect().position
+func quit_game():
+	get_tree().quit()
+
+func _on_ReturnToTitle_mouse_entered() -> void:
+	ArrowPosition = 0
+	Arrow.rect_position.y = options.rect_position.y + options.get_child(ArrowPosition).rect_position.y + 25
+	Arrow.rect_position.x = options.get_child(ArrowPosition).rect_position.x - 64
+
+
+func _on_Exit_mouse_entered() -> void:
+	ArrowPosition = 1
+	Arrow.rect_position.y = options.rect_position.y + options.get_child(ArrowPosition).rect_position.y + 25
+	Arrow.rect_position.x = options.get_child(ArrowPosition).rect_position.x - 64

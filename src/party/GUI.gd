@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal recover_health()
+signal recover_mana()
+
 onready var partyMembers = [$ItemBar/Label/Chloe, $ItemBar/Label/Ally1, $ItemBar/Label/Ally2]
 onready var activeMembers = 1
 onready var equipment = [$ItemBar/Label/HeartSeed, $ItemBar/Label/ThornSword, $ItemBar/Label/FloralShield, $ItemBar/Label/GliciniaCrown, $ItemBar/Label/LeafShoes]
@@ -19,3 +22,11 @@ func update_mana_potions(count: int):
 	
 func addEquip(id : int):
 	equipment[id].show()
+
+
+func _on_HealthPotion_pressed() -> void:
+	emit_signal("recover_health")
+
+
+func _on_ManaPotion_pressed() -> void:
+	emit_signal("recover_mana")

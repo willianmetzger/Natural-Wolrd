@@ -6,6 +6,9 @@ func _ready() -> void:
 	randomize()
 
 func _on_NewGame_pressed() -> void:
+	execute()
+	
+func execute():
 	var game = game_scene.instance()
 	get_tree().get_root().add_child(game)
 	game.prepare_levels()

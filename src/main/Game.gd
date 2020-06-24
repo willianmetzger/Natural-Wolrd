@@ -12,7 +12,7 @@ onready var player
 onready var party = $Party as Party
 onready var GUI = $GUI
 onready var music_player = $MusicPlayer
-onready var game_over_interface : = $GameOverInterface
+onready var game_over_interface = "res://src/interface/game_over/GameOverInterface.tscn"
 onready var game_stage = 1
 onready var current_level = 0
 
@@ -36,6 +36,7 @@ func load_level():
 		player.party = party
 		party.player = player
 		party.GUI = GUI
+		party.connect_signals()
 		player.connect("enemies_encountered", self,  "enter_battle")	
 		
 	elif current_level == 5:
@@ -46,6 +47,7 @@ func load_level():
 		player.party = party
 		party.player = player
 		party.GUI = GUI
+		party.connect_signals()
 		player.connect("enemies_encountered", self,  "enter_battle")
 		
 	else :
@@ -58,6 +60,7 @@ func load_level():
 		player.party = party
 		party.player = player
 		party.GUI = GUI
+		party.connect_signals()
 		player.connect("enemies_encountered", self,  "enter_battle")
 		
 	current_level += 1
@@ -70,6 +73,7 @@ func load_level_byId(id):
 	player.party = party
 	party.player = player
 	party.GUI = GUI
+	party.connect_signals()
 	player.connect("enemies_encountered", self,  "enter_battle")
 	current_level += 1
 
@@ -111,6 +115,7 @@ func _on_CombatArena_battle_completed(arena):
 	add_child(level)
 	add_child(GUI)
 	party.updateGUI()
+	party.connect_signals()
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
 	music_player.stop()
@@ -121,11 +126,8 @@ func _on_CombatArena_player_victory():
 func _on_CombatArena_game_over() -> void:
 	transitioning = true
 	yield(transition.fade_to_color(), "completed")
-	game_over_interface.display(GameOverInterface.Reason.PARTY_DEFEATED)
+	game_over_interface = load(game_over_interface).instance()
+	get_tree().root.add_child(game_over_interface)
+	queue_free()
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
-
-func _on_GameOverInterface_return_to_title():
-	game_over_interface.hide()
-	get_tree().reload_current_scene()
-	get_tree().change_scene("res://src/map/TitleScreen.tscn")
