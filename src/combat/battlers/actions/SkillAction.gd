@@ -30,4 +30,6 @@ func execute(targets):
 	return true
 
 func can_use() -> bool:
+	if actor.mana < skill.mana_cost :
+		actor.missManaAnim.start()
 	return actor.mana >= skill.mana_cost

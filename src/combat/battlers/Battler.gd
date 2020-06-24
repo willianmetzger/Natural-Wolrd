@@ -14,6 +14,8 @@ onready var actions = $Actions
 onready var bars = $Bars
 onready var skills = $Skills
 onready var ai = $AI
+onready var shieldAnim = $ShieldAnim
+onready var missManaAnim = $MissMana
 
 var target_global_position : Vector2
 

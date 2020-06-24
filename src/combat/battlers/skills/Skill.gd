@@ -20,6 +20,7 @@ export(float, 0.0, 1.0) var success_chance : float
 func use(actor : Battler, target : Battler):
 	#actor.take_damage(10)
 	if !is_offensive:
+		actor.shieldAnim.start()
 		actor.defense = rand_range(min_damage_reduction, max_damage_reduction)
 		actor.defenseTurns = 3
 	else:

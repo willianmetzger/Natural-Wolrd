@@ -48,7 +48,7 @@ tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 
 position = Vector2( 272, 952 )
 scale = Vector2( 0.65748, 0.65748 )
 
-[node name="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" parent="Player" index="3"]
 limit_right = 3327
 
 [node name="door" parent="." instance=ExtResource( 8 )]
