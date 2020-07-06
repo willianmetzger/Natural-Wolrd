@@ -129,8 +129,7 @@ speed = Vector2( 0, 1400 )
 
 [node name="enemy" parent="Enemy" index="0"]
 position = Vector2( 3.29736, -71.0278 )
-animation = "idle"
-frame = 16
+frame = 18
 
 [node name="VisibilityEnabler2D" parent="Enemy" index="2"]
 position = Vector2( -46.2212, -54.8986 )

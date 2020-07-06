@@ -1,0 +1,13 @@
+
+assets/tilesets/NaturalTiles.tres
+default_env.tres
+project.godot
+src/combat/battlers/skills/Enemy Skills/bat_defend.tres
+src/combat/battlers/skills/Enemy Skills/grasshopper_defend.tres
+src/combat/battlers/skills/Enemy Skills/hummingbird_defend.tres
+src/combat/battlers/skills/Enemy Skills/hummingbird_special.tres
+src/combat/battlers/skills/Player Skills/Defensive Skills/Defend.tres
+src/combat/battlers/skills/Player Skills/Offensive Skills/Lollislash.tres
+src/interface/menus/TitleScreen.tscn
+src/map/Levels/Level_15.tscn
+src/map/Levels/Rest_Level.tscn
