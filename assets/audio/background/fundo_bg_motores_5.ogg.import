@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fundo_bg_motores_5.ogg-28d2644d94bc9e2d69a90a705afbb46d.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/background/fundo_bg_motores_5.ogg"
+dest_files=[ "res://.import/fundo_bg_motores_5.ogg-28d2644d94bc9e2d69a90a705afbb46d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

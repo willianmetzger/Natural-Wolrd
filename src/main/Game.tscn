@@ -3,8 +3,8 @@
 [ext_resource path="res://src/main/Game.gd" type="Script" id=1]
 [ext_resource path="res://src/party/Party.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/party/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/background/fundo_bg_motores_3.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/shaders/TransitionColor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/audio/bgm/battle_theme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/main/MusicPlayer.gd" type="Script" id=8]
 [ext_resource path="res://src/interface/debug/DebugInterface.tscn" type="PackedScene" id=9]
 
@@ -14,7 +14,8 @@ script = ExtResource( 1 )
 [node name="Party" parent="." instance=ExtResource( 2 )]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 4 )
+autoplay = true
 script = ExtResource( 8 )
 
 [node name="Overlays" type="CanvasLayer" parent="."]

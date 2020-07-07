@@ -119,6 +119,7 @@ func _on_CombatArena_battle_completed(arena):
 	yield(transition.fade_from_color(), "completed")
 	transitioning = false
 	music_player.stop()
+	music_player.play_bg_1()
 
 func _on_CombatArena_player_victory():
 	music_player.play_victory_fanfare()
