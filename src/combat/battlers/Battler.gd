@@ -73,5 +73,5 @@ func end_battle():
 	for bar in bars.get_children():
 		bar.queue_free()
 	for action in actions.get_children():
-		if action.name != "Attack":
+		if action.name != "Ataque":
 			action.queue_free()

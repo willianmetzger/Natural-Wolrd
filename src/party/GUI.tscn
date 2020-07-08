@@ -397,9 +397,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="ItemBar/Label/HealthPotion"]
-margin_left = -42.363
+margin_left = -87.2314
 margin_top = 5.01893
-margin_right = 54.637
+margin_right = 127.769
 margin_bottom = 73.0189
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 16 )
@@ -438,9 +438,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="ItemBar/Label/ManaPotion"]
-margin_left = 50.322
+margin_left = 54.9677
 margin_top = 5.26158
-margin_right = 147.322
+margin_right = 269.968
 margin_bottom = 73.2616
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 15 )

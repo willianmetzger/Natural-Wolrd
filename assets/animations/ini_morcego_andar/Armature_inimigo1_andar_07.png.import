@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Armature_inimigo1_andar_07.png-7d04356f6d38ebd4fe667b31b0b5db79.stex"
+path="res://.import/Armature_inimigo1_andar_07.png-ea313e59a8b6b0dbd695346b6ecc5378.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/ini_morcego_andar/Armature_inimigo1_andar_07.png"
-dest_files=[ "res://.import/Armature_inimigo1_andar_07.png-7d04356f6d38ebd4fe667b31b0b5db79.stex" ]
+source_file="res://assets/animations/Ini_morcego_andar/Armature_inimigo1_andar_07.png"
+dest_files=[ "res://.import/Armature_inimigo1_andar_07.png-ea313e59a8b6b0dbd695346b6ecc5378.stex" ]
 
 [params]
 

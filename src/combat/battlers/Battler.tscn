@@ -60,8 +60,9 @@ anims/idle = SubResource( 2 )
 [node name="Actions" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="Attack" parent="Actions" instance=ExtResource( 5 )]
+[node name="Ataque" parent="Actions" instance=ExtResource( 5 )]
 script = ExtResource( 6 )
+dmg = 9
 
 [node name="TargetAnchor" type="Position2D" parent="."]
 

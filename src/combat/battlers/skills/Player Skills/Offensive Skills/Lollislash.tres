@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 2 )
-name = "Special"
+name = "Especial"
 description = "A sweet hit"
 icon = ExtResource( 1 )
 mana_cost = 3

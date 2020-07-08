@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Armature_inimigo1_andar_01.png-ebc2a9ec65291291eacb4abaa83bf996.stex"
+path="res://.import/tecla_e.png-218744ca04029d127ae0642a45f3b9e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/Ini_morcego_andar/Armature_inimigo1_andar_01.png"
-dest_files=[ "res://.import/Armature_inimigo1_andar_01.png-ebc2a9ec65291291eacb4abaa83bf996.stex" ]
+source_file="res://assets/sprites/teclas/tecla_e.png"
+dest_files=[ "res://.import/tecla_e.png-218744ca04029d127ae0642a45f3b9e0.stex" ]
 
 [params]
 
