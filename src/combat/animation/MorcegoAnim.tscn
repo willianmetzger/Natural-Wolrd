@@ -13,6 +13,7 @@ texture = ExtResource( 2 )
 
 [node name="body" type="Sprite" parent="." index="1"]
 position = Vector2( 1.54807, -68.4282 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 
 [node name="RectExtents" parent="." index="3"]

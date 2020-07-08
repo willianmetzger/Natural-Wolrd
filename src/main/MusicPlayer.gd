@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 const battle_theme = preload("res://assets/audio/background/battle_1.ogg")
-const victory_fanfare = preload("res://assets/audio/bgm/victory_fanfare.ogg")
+const victory_fanfare = preload("res://assets/audio/bgm/win_sound.wav")
 const bg_1 = preload("res://assets/audio/background/fundo_bg_motores_3.ogg")
 const bg_menu = preload("res://assets/audio/background/fundo_bg_motores_1.ogg")
 
